@@ -7,8 +7,48 @@
 namespace Tests::Auxiliary
 {
 	// Returns true iff `output` is a valid solution to `input`.
-	// Assumes a solution exists.
 	auto check_output_validity(const Params::Input& input, const Params::output_t& output) -> bool;
+
+	auto get_actual_row_and_col_sums(const Params::Input& input, const Params::output_grid_t& solution) -> std::pair<std::vector<int>, std::vector<int>>;
+}
+
+auto Tests::Auxiliary::check_output_validity(const Params::Input& input, const Params::output_t& output) -> bool
+{
+	const bool solution_exists = output.has_value();
+
+	if (!solution_exists)
+	{
+		return false;
+	}
+
+	const Params::output_grid_t solution = output.value();
+	const auto [actual_row_sums, actual_col_sums] = Auxiliary::get_actual_row_and_col_sums(input, solution);
+	const bool row_sums_match = input.row_sums == actual_row_sums;
+	const bool col_sums_match = input.col_sums == actual_col_sums;
+
+	return row_sums_match && col_sums_match;
+}
+
+auto Tests::Auxiliary::get_actual_row_and_col_sums(const Params::Input& input, const Params::output_grid_t& solution) -> std::pair<std::vector<int>, std::vector<int>>
+{
+	std::vector<int> row_sums(solution.size());
+	std::vector<int> col_sums(solution.size());
+
+	for (size_t row = 0; row < solution.size(); ++row)
+	{
+		for (size_t col = 0; col < solution.size(); ++col)
+		{
+			const bool cell_is_kept = solution[row][col] == Params::CellStatus::KEEP;
+			
+			if (cell_is_kept)
+			{
+				row_sums[row] += input.grid[row][col];
+				col_sums[col] += input.grid[row][col];
+			}
+		}
+	}
+
+	return {row_sums, col_sums};
 }
 
 auto Tests::run_algorithm_tests() -> void
