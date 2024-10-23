@@ -23,7 +23,7 @@ auto run_all_tests() -> void
 	{
 		std::println("Running {} tests.", name);
 		test();
-		std::println("All {} tests passed.");
+		std::println("All {} tests passed.", name);
 	}
 
 	std::println("All tests passed!");
