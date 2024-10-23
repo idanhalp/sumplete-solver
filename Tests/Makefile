@@ -11,7 +11,9 @@ COMPILER_FLAGS = $(CPP_STANDARD) $(WARNING_FLAGS) $(SANITIZER_FLAGS) $(OPTIMIZAT
 SOURCE_FILES = \
 	../Source/Algorithm/Algorithm.cpp \
 	../Source/ValidityChecks/ValidityChecks.cpp \
-	Main.cpp
+	Algorithm/Algorithm.cpp \
+	Main.cpp \
+	ValidityChecks/ValidityChecks.cpp
 
 
 OBJECT_FILES = $(SOURCE_FILES:.cpp=.o)
