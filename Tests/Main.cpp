@@ -19,11 +19,13 @@ auto run_all_tests() -> void
 		TestInfo(Tests::run_validity_checks_tests, "validity checks")
 	};
 
+	std::println("\nRunning tests.\n");
+
 	for (const auto& [test, name] : tests)
 	{
 		std::println("Running {} tests.", name);
 		test();
-		std::println("All {} tests passed.", name);
+		std::println("All {} tests passed.\n", name);
 	}
 
 	std::println("All tests passed!");
