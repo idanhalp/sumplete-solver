@@ -88,7 +88,7 @@ auto Algorithm::Auxiliary::try_keeping_value(const Cell cell, const Params::Inpu
 	const bool reached_last_row = row == input.grid.size() - 1;
 	const bool reached_last_col = col == input.grid.size() - 1;
 	const bool rows_are_valid = !reached_last_col || actual_row_sums[row] == input.row_sums[row];
-	const bool cols_are_valid = !reached_last_row || actual_col_sums[row] == input.col_sums[row];	
+	const bool cols_are_valid = !reached_last_row || actual_col_sums[col] == input.col_sums[col];	
 	const bool substitution_is_valid = rows_are_valid && cols_are_valid && solve(input, output, actual_row_sums, actual_col_sums);
 
 	if (substitution_is_valid)
@@ -112,7 +112,7 @@ auto Algorithm::Auxiliary::try_deleting_value(const Cell cell, const Params::Inp
 	const bool reached_last_row = row == input.grid.size() - 1;
 	const bool reached_last_col = col == input.grid.size() - 1;
 	const bool rows_are_valid = !reached_last_col || actual_row_sums[row] == input.row_sums[row];
-	const bool cols_are_valid = !reached_last_row || actual_col_sums[row] == input.col_sums[row];	
+	const bool cols_are_valid = !reached_last_row || actual_col_sums[col] == input.col_sums[col];	
 	const bool substitution_is_valid = rows_are_valid && cols_are_valid && solve(input, output, actual_row_sums, actual_col_sums);
 
 	if (substitution_is_valid)
