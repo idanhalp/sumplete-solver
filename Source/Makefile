@@ -9,7 +9,9 @@ LINK_TIME_OPTIMIZATION = -flto
 COMPILER_FLAGS = $(CPP_STANDARD) $(WARNING_FLAGS) $(SANITIZER_FLAGS) $(OPTIMIZATION_LEVEL)
 
 SOURCE_FILES = \
-	Main.cpp
+	Algorithm/Algorithm.cpp \
+	Main.cpp \
+	ValidityChecks/ValidityChecks.cpp
 
 OBJECT_FILES = $(SOURCE_FILES:.cpp=.o)
 
