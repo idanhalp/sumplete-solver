@@ -13,8 +13,8 @@ namespace Tests::Auxiliary
 
 auto Tests::run_algorithm_tests() -> void
 {
-	const std::vector<int> row_sums_1{5, 11, 8};
-	const std::vector<int> col_sums_1{9, 3, 12};
+	const std::vector row_sums_1{5, 11, 8};
+	const std::vector col_sums_1{9, 3, 12};
 	const Params::input_grid_t grid_1
 	{
 		{2, 3, 5},
@@ -30,8 +30,8 @@ auto Tests::run_algorithm_tests() -> void
 
 	// ---------------------------------------------------------------------------------
 
-	const std::vector<int> row_sums_2{0, 12, 1, 14};
-	const std::vector<int> col_sums_2{0, 12, 5, 10};
+	const std::vector row_sums_2{0, 12, 1, 14};
+	const std::vector col_sums_2{0, 12, 5, 10};
 	const Params::input_grid_t grid_2
 	{
 		{7, 3, 3, 2},
