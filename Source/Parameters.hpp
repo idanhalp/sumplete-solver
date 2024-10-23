@@ -10,7 +10,8 @@ namespace Params
 	enum class CellStatus
 	{
 		KEEP,
-		DELETE
+		DELETE,
+		UNKNOWN
 	};
 
 	enum class SolutionError
