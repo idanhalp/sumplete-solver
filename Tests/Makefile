@@ -9,14 +9,21 @@ LINK_TIME_OPTIMIZATION = # -flto
 COMPILER_FLAGS = $(CPP_STANDARD) $(WARNING_FLAGS) $(SANITIZER_FLAGS) $(OPTIMIZATION_LEVEL)
 
 SOURCE_FILES = \
-	../Source/Algorithm/Algorithm.cpp \
-	../Source/ValidityChecks/ValidityChecks.cpp \
-	Algorithm/Algorithm.cpp \
-	Main.cpp \
-	ValidityChecks/ValidityChecks.cpp
+	Source/Algorithm/Algorithm.cpp \
+	Source/ValidityChecks/ValidityChecks.cpp
 
+TEST_FILES = \
+	Tests/Algorithm/Algorithm.cpp \
+	Tests/Main.cpp \
+	Tests/ValidityChecks/ValidityChecks.cpp
 
-OBJECT_FILES = $(SOURCE_FILES:.cpp=.o)
+PATH_TO_ROOT = ../
+
+ALL_FILES = \
+	$(addprefix $(PATH_TO_ROOT), $(SOURCE_FILES)) \
+	$(addprefix $(PATH_TO_ROOT), $(TEST_FILES))
+
+OBJECT_FILES = $(ALL_FILES:.cpp=.o)
 
 # Output executable
 TARGET = output.exe
