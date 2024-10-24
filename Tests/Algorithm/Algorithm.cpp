@@ -146,8 +146,31 @@ auto Tests::run_algorithm_tests() -> void
 
 	assert(output_is_valid_5);
 
-	// ---------------------------------------------------------------------------------
+	// -------------------------- HARD TEST CASE ------------------------------------
+
+	// const std::vector row_sums_6{-19, -18, -8, -19, -17, 31, -56, 2, 12};
+	// const std::vector col_sums_6{-26, -4, -32, -23, 27, 2, 23, -54, -5};
+	// const Params::input_grid_t grid_6
+	// {
+	// 	{-1, 5, -8, -4, -2, -4, 5, -1, -5},
+	// 	{11, -3, 6, -6, -10, -10, -17, 6, -18},
+	// 	{-10, 10, 4, -5, -12, -2, 15, -19, -16},
+	// 	{-10, -5, -6, 6, 14, 15, 19, -13, -9},
+	// 	{-6, 4, 15, -14, 13, -4, 3, -11, -18},
+	// 	{-7, -8, -8, 3, 11, 14, -5, -15, 19},
+	// 	{-16, 12, -18, -2, 15, -5, 19, -15, 14},
+	// 	{6, -11, 2, -4, 11, 11, -14, -7, 8},
+	// 	{-14, -10, -3, 14, 19, 3, 1, 19, -6}
+	// };
+
+	// const Params::Input input_6 = {row_sums_6, col_sums_6, grid_6};
+	// const Params::output_t output_6 = Algorithm::solve(input_6);
+	// const bool output_is_valid_6 = Auxiliary::check_output_validity(input_6, output_6);
+
+	// assert(output_is_valid_6);
+
 	// -------------------------- EXTREME TEST CASE ------------------------------------
+	
 	// const std::vector row_sums_3{-31, -29, -18, 25, 3, -17, -23, -11, 0};
 	// const std::vector col_sums_3{-6, -28, -40, -4, -28, 12, -19, 15, -3};
 	// const Params::input_grid_t grid_3
