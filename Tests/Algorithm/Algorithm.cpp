@@ -106,6 +106,26 @@ auto Tests::run_algorithm_tests() -> void
 	assert(output_is_valid_3);
 
 	// ---------------------------------------------------------------------------------
+
+	const std::vector row_sums_4{13, 9, 14, 2, 17, 8};
+	const std::vector col_sums_4{3, 8, 14, 22, 12, 4};
+	const Params::input_grid_t grid_4
+	{
+		{6, 2, 3, 8, 3, 2},
+		{3, 6, 7, 2, 3, 1},
+		{4, 5, 1, 8, 1, 6},
+		{7, 5, 6, 2, 9, 2},
+		{3, 5, 6, 7, 8, 3},
+		{2, 3, 4, 4, 1, 1}
+	};
+
+	const Params::Input input_4 = {row_sums_4, col_sums_4, grid_4};
+	const Params::output_t output_4 = Algorithm::solve(input_4);
+	const bool output_is_valid_4 = Auxiliary::check_output_validity(input_4, output_4);
+
+	assert(output_is_valid_4);
+
+	// ---------------------------------------------------------------------------------
 	// -------------------------- EXTREME TEST CASE ------------------------------------
 	// const std::vector row_sums_3{-31, -29, -18, 25, 3, -17, -23, -11, 0};
 	// const std::vector col_sums_3{-6, -28, -40, -4, -28, 12, -19, 15, -3};
