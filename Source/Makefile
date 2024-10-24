@@ -11,6 +11,7 @@ COMPILER_FLAGS = $(CPP_STANDARD) $(WARNING_FLAGS) $(SANITIZER_FLAGS) $(OPTIMIZAT
 SOURCE_FILES = \
 	Algorithm/Version1/Algorithm.cpp \
 	Algorithm/Version2/Algorithm.cpp \
+	Algorithm/Version2/Utils/Trie/Trie.cpp \
 	Main.cpp \
 	ValidityChecks/ValidityChecks.cpp
 
