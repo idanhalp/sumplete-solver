@@ -1,5 +1,5 @@
-#ifndef SOURCE_ALGORITHM_HPP
-#define SOURCE_ALGORITHM_HPP
+#ifndef SOURCE_ALGORITHM_VERSION_1_HPP
+#define SOURCE_ALGORITHM_VERSION_1_HPP
 
 #include "../../Parameters.hpp"
 
@@ -12,4 +12,4 @@ namespace Algorithm::Version1
 	auto solve(const Params::Input& input) -> Params::output_t;
 };
 
-#endif // SOURCE_ALGORITHM_HPP
+#endif // SOURCE_ALGORITHM_VERSION_1_HPP
