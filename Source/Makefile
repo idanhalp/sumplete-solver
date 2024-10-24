@@ -9,7 +9,7 @@ LINK_TIME_OPTIMIZATION = -flto
 COMPILER_FLAGS = $(CPP_STANDARD) $(WARNING_FLAGS) $(SANITIZER_FLAGS) $(OPTIMIZATION_LEVEL)
 
 SOURCE_FILES = \
-	Algorithm/Algorithm.cpp \
+	Algorithm/Version1/Algorithm.cpp \
 	Main.cpp \
 	ValidityChecks/ValidityChecks.cpp
 

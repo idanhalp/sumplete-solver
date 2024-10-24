@@ -1,7 +1,7 @@
 #ifndef SOURCE_ALGORITHM_HPP
 #define SOURCE_ALGORITHM_HPP
 
-#include "../Parameters.hpp"
+#include "../../Parameters.hpp"
 
 namespace Algorithm::Version1
 {

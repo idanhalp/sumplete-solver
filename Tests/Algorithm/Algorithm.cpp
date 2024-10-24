@@ -1,4 +1,4 @@
-#include "../../Source/Algorithm/Algorithm.hpp"
+#include "../../Source/Algorithm/Version1/Algorithm.hpp"
 #include "../../Source/Parameters.hpp"
 #include "Algorithm.hpp"
 #include <cassert>
