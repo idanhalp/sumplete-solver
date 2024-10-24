@@ -63,7 +63,7 @@ auto Tests::run_algorithm_tests() -> void
 	};
 
 	const Params::Input input_1 = {row_sums_1, col_sums_1, grid_1};
-	const Params::output_t output_1 = Algorithm::solve(input_1);
+	const Params::output_t output_1 = Algorithm::Version1::solve(input_1);
 	const bool output_is_valid_1 = Auxiliary::check_output_validity(input_1, output_1);
 
 	assert(output_is_valid_1);
@@ -81,7 +81,7 @@ auto Tests::run_algorithm_tests() -> void
 	};
 
 	const Params::Input input_2 = {row_sums_2, col_sums_2, grid_2};
-	const Params::output_t output_2 = Algorithm::solve(input_2);
+	const Params::output_t output_2 = Algorithm::Version1::solve(input_2);
 	const bool output_is_valid_2 = Auxiliary::check_output_validity(input_2, output_2);
 
 	assert(output_is_valid_2);
@@ -100,7 +100,7 @@ auto Tests::run_algorithm_tests() -> void
 	};
 
 	const Params::Input input_3 = {row_sums_3, col_sums_3, grid_3};
-	const Params::output_t output_3 = Algorithm::solve(input_3);
+	const Params::output_t output_3 = Algorithm::Version1::solve(input_3);
 	const bool output_is_valid_3 = Auxiliary::check_output_validity(input_3, output_3);
 
 	assert(output_is_valid_3);
@@ -120,7 +120,7 @@ auto Tests::run_algorithm_tests() -> void
 	};
 
 	const Params::Input input_4 = {row_sums_4, col_sums_4, grid_4};
-	const Params::output_t output_4 = Algorithm::solve(input_4);
+	const Params::output_t output_4 = Algorithm::Version1::solve(input_4);
 	const bool output_is_valid_4 = Auxiliary::check_output_validity(input_4, output_4);
 
 	assert(output_is_valid_4);
@@ -141,7 +141,7 @@ auto Tests::run_algorithm_tests() -> void
 	};
 
 	const Params::Input input_5 = {row_sums_5, col_sums_5, grid_5};
-	const Params::output_t output_5 = Algorithm::solve(input_5);
+	const Params::output_t output_5 = Algorithm::Version1::solve(input_5);
 	const bool output_is_valid_5 = Auxiliary::check_output_validity(input_5, output_5);
 
 	assert(output_is_valid_5);
@@ -164,7 +164,7 @@ auto Tests::run_algorithm_tests() -> void
 	// };
 
 	// const Params::Input input_6 = {row_sums_6, col_sums_6, grid_6};
-	// const Params::output_t output_6 = Algorithm::solve(input_6);
+	// const Params::output_t output_6 = Algorithm::Version1::solve(input_6);
 	// const bool output_is_valid_6 = Auxiliary::check_output_validity(input_6, output_6);
 
 	// assert(output_is_valid_6);
@@ -187,7 +187,7 @@ auto Tests::run_algorithm_tests() -> void
 	// };
 
 	// const Params::Input input_3 = {row_sums_3, col_sums_3, grid_3};
-	// const Params::output_t output_3 = Algorithm::solve(input_3);
+	// const Params::output_t output_3 = Algorithm::Version1::solve(input_3);
 	// const bool output_is_valid_3 = Auxiliary::check_output_validity(input_3, output_3);
 
 	// assert(output_is_valid_3);

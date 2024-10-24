@@ -11,7 +11,7 @@ struct Cell
 	size_t col;
 };
 
-namespace Algorithm::Auxiliary
+namespace Algorithm::Version1::Auxiliary
 {
 	auto solve(const Params::Input& input, Params::output_grid_t& output, std::span<int> actual_row_sums, std::span<int> actual_col_sums) -> bool;
 	
@@ -22,7 +22,7 @@ namespace Algorithm::Auxiliary
 	auto find_next_vacant_cell(const Params::output_grid_t& output) -> std::optional<Cell>;
 }
 
-auto Algorithm::solve(const Params::Input& input) -> Params::output_t
+auto Algorithm::Version1::solve(const Params::Input& input) -> Params::output_t
 {
 	const std::optional<Params::SolutionError> input_error = ValidityChecks::check_input(input);
 	const bool found_error_in_input = input_error.has_value();
@@ -50,7 +50,7 @@ auto Algorithm::solve(const Params::Input& input) -> Params::output_t
 	}
 }
 
-auto Algorithm::Auxiliary::solve(const Params::Input& input, Params::output_grid_t& output, std::span<int> actual_row_sums, std::span<int> actual_col_sums) -> bool
+auto Algorithm::Version1::Auxiliary::solve(const Params::Input& input, Params::output_grid_t& output, std::span<int> actual_row_sums, std::span<int> actual_col_sums) -> bool
 {
 	const std::optional<Cell> cell = find_next_vacant_cell(output);
 	const bool all_cells_are_filled = !cell.has_value();
@@ -78,7 +78,7 @@ auto Algorithm::Auxiliary::solve(const Params::Input& input, Params::output_grid
 	return false;
 }
 
-auto Algorithm::Auxiliary::try_keeping_value(const Cell cell, const Params::Input& input, Params::output_grid_t& output, std::span<int> actual_row_sums, std::span<int> actual_col_sums) -> bool
+auto Algorithm::Version1::Auxiliary::try_keeping_value(const Cell cell, const Params::Input& input, Params::output_grid_t& output, std::span<int> actual_row_sums, std::span<int> actual_col_sums) -> bool
 {
 	const auto [row, col] = cell;
 	output[row][col] = Params::CellStatus::KEEP;
@@ -104,7 +104,7 @@ auto Algorithm::Auxiliary::try_keeping_value(const Cell cell, const Params::Inpu
 	return false;
 }
 
-auto Algorithm::Auxiliary::try_deleting_value(const Cell cell, const Params::Input& input, Params::output_grid_t& output, std::span<int> actual_row_sums, std::span<int> actual_col_sums) -> bool
+auto Algorithm::Version1::Auxiliary::try_deleting_value(const Cell cell, const Params::Input& input, Params::output_grid_t& output, std::span<int> actual_row_sums, std::span<int> actual_col_sums) -> bool
 {
 	const auto [row, col] = cell;
 	output[row][col] = Params::CellStatus::DELETE;
@@ -126,7 +126,7 @@ auto Algorithm::Auxiliary::try_deleting_value(const Cell cell, const Params::Inp
 	return false;
 }
 
-auto Algorithm::Auxiliary::find_next_vacant_cell(const Params::output_grid_t& output) -> std::optional<Cell>
+auto Algorithm::Version1::Auxiliary::find_next_vacant_cell(const Params::output_grid_t& output) -> std::optional<Cell>
 {
 	for (size_t row = 0; row < output.size(); ++row)
 	{

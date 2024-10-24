@@ -3,7 +3,7 @@
 
 #include "../Parameters.hpp"
 
-namespace Algorithm
+namespace Algorithm::Version1
 {
 	/// @brief Finds a solution to the input.
 	/// @param input The algorithm's arguments.
