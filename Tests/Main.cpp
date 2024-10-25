@@ -1,4 +1,5 @@
 #include "Algorithm/Algorithm.hpp"
+#include "Algorithm/Version2/Trie/Trie.hpp"
 #include "ValidityChecks/ValidityChecks.hpp"
 #include <cstdlib>
 #include <functional>
@@ -16,6 +17,7 @@ auto run_all_tests() -> void
 	const auto tests = 
 	{
 		TestInfo(Tests::run_algorithm_tests, "algorithm"),
+		TestInfo(Tests::Version2::run_trie_tests, "trie"),
 		TestInfo(Tests::run_validity_checks_tests, "validity checks")
 	};
 

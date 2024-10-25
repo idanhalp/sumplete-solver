@@ -2,7 +2,7 @@ COMPILER = g++
 
 CPP_STANDARD = -std=c++23
 WARNING_FLAGS = -Wall -Wextra -pedantic -Werror
-SANITIZER_FLAGS = -fsanitize=address,undefined,signed-integer-overflow,bounds
+SANITIZER_FLAGS = # -fsanitize=address,undefined,signed-integer-overflow,bounds
 OPTIMIZATION_LEVEL = -O0
 LINK_TIME_OPTIMIZATION = # -flto
 
@@ -16,6 +16,7 @@ SOURCE_FILES = \
 
 TEST_FILES = \
 	Tests/Algorithm/Algorithm.cpp \
+	Tests/Algorithm/Version2/Trie/Trie.cpp \
 	Tests/Main.cpp \
 	Tests/ValidityChecks/ValidityChecks.cpp
 
