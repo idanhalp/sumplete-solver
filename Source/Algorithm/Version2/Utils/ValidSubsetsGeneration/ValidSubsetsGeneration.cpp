@@ -23,14 +23,12 @@ auto check_if_subset_is_valid(std::span<const int> elements, const int target_su
 
 auto convert_mask_to_sequence(const unsigned int mask, const size_t set_size) -> std::vector<bool>
 {
-	std::vector<bool> sequence;
-	sequence.reserve(set_size);
-
-	for (const size_t index : std::views::iota(0U, set_size))
-	{
-		const bool index_is_included_in_subset = (mask & (1U << index)) != 0;
-		sequence.push_back(index_is_included_in_subset);
-	}
+	const auto indices = std::views::iota(0U, set_size);
+	const auto included_in_subset = [=] (const unsigned int index) -> bool { return (mask & (1U << index)) != 0; };
+	
+	const std::vector sequence = indices
+		| std::views::transform(included_in_subset)
+		| std::ranges::to<std::vector>();
 
 	return sequence;
 }
