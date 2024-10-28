@@ -12,6 +12,7 @@ SOURCE_FILES = \
 	Source/Algorithm/Version1/Algorithm.cpp \
 	Source/Algorithm/Version2/Algorithm.cpp \
 	Source/Algorithm/Version2/Utils/Trie/Trie.cpp \
+	Source/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp \
 	Source/ValidityChecks/ValidityChecks.cpp
 
 TEST_FILES = \
