@@ -43,7 +43,6 @@ auto Algorithm::Version2::Utils::generate_valid_subsets(std::span<const int> ele
 	
 	const std::vector valid_subsets = masks
 		| std::views::filter(subset_is_valid)
-		| std::ranges::to<std::vector>()
 		| std::views::transform(mask_to_sequence) 
 		| std::ranges::to<std::vector>();
 
