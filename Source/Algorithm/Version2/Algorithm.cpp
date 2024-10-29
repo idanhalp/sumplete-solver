@@ -1,8 +1,8 @@
-#include "Source/Parameters.hpp"
-#include "Source/ValidityChecks/ValidityChecks.hpp"
+#include "Source/Algorithm/Version2/Algorithm.hpp"
 #include "Source/Algorithm/Version2/Utils/Trie/Trie.hpp"
 #include "Source/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp"
-#include "Source/Algorithm/Version2/Algorithm.hpp"
+#include "Source/Parameters.hpp"
+#include "Source/ValidityChecks/ValidityChecks.hpp"
 #include <optional>
 #include <ranges>
 #include <span>
