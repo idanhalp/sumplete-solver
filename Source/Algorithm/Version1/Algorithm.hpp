@@ -3,7 +3,7 @@
 
 #include "Source/Parameters.hpp"
 
-/// @brief Simple algorithm to find a solution.
+/// @brief Simple algorithm for finding a solution.
 ///
 /// Iterates over each cell and tries to keep or
 /// delete it.
@@ -19,7 +19,7 @@
 ///
 /// The main drawback of the implementation is that its pruning
 /// is very lax: only when an end of a row or column is reached;
-/// an issue which is solved in version 2.  
+/// an issue which is solved in version 2.
 namespace Algorithm::Version1
 {
 	/// @brief Finds a solution to the input.
