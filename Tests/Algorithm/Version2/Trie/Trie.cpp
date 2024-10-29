@@ -4,13 +4,10 @@
 
 auto Tests::Version2::run_trie_tests() -> void
 {
-	Algorithm::Version2::Utils::Trie trie;
-
 	const std::vector sequence_1{true, true, false, false, true};
 	const std::vector sequence_2{false, false, true, true, true};
-
-	trie.insert(sequence_1);
-	trie.insert(sequence_2);
+	const std::vector sequences{sequence_1, sequence_2};
+	const Algorithm::Version2::Utils::Trie trie(sequences);
 
 	const std::vector subsequence_1 = sequence_1;
 	assert(trie.check_if_prefix_exists(subsequence_1));

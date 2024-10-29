@@ -1,8 +1,17 @@
 #include "Trie.hpp"
+#include <algorithm>
 
 Algorithm::Version2::Utils::Trie::Trie()
 {
 	root = std::make_unique<TrieNode>();
+}
+
+Algorithm::Version2::Utils::Trie::Trie(const std::vector<std::vector<bool>>& sequences) : Trie()
+{
+	std::ranges::for_each(sequences, [&] (const std::vector<bool>& sequence)
+	{
+		insert(sequence);
+	});
 }
 
 auto Algorithm::Version2::Utils::Trie::insert(const std::vector<bool>& sequence) -> void

@@ -21,7 +21,9 @@ namespace Algorithm::Version2::Utils
 	{
 	public:
 		Trie();
-		
+
+		Trie(const std::vector<std::vector<bool>>& sequences); 
+
 		~Trie() = default;
 
 		auto insert(const std::vector<bool>& sequence) -> void;
