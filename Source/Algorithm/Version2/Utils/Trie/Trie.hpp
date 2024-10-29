@@ -26,6 +26,8 @@ namespace Algorithm::Version2::Utils
 
 		~Trie() = default;
 
+		Trie(Trie&& trie) = default; // Move constructor.
+
 		auto insert(const std::vector<bool>& sequence) -> void;
 
 		auto check_if_prefix_exists(const std::vector<bool>& sequence) const -> bool;
