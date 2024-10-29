@@ -18,6 +18,7 @@ SOURCE_FILES = \
 TEST_FILES = \
 	Tests/Algorithm/Algorithm.cpp \
 	Tests/Algorithm/Version2/Trie/Trie.cpp \
+	Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp \
 	Tests/Main.cpp \
 	Tests/ValidityChecks/ValidityChecks.cpp
 
