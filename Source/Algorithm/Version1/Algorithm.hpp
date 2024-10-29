@@ -17,8 +17,8 @@
 /// 20 seconds to solve an easy 9x9 grid, and unable to solve
 /// a master-level grid of such size.
 ///
-/// The main drawback of the implementation is the pruning is
-/// very lax: only when an end of a row or column is reached;
+/// The main drawback of the implementation is that its pruning
+/// is very lax: only when an end of a row or column is reached;
 /// an issue which is solved in version 2.  
 namespace Algorithm::Version1
 {
