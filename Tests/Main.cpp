@@ -1,7 +1,7 @@
-#include "Algorithm/Algorithm.hpp"
-#include "Algorithm/Version2/Trie/Trie.hpp"
-#include "Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp"
-#include "ValidityChecks/ValidityChecks.hpp"
+#include "Tests/Algorithm/Algorithm.hpp"
+#include "Tests/Algorithm/Version2/Trie/Trie.hpp"
+#include "Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp"
+#include "Tests/ValidityChecks/ValidityChecks.hpp"
 #include <cstdlib>
 #include <functional>
 #include <print>

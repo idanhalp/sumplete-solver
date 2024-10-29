@@ -1,5 +1,5 @@
-#include "../../../../Source/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp"
-#include "ValidSubsetsGeneration.hpp"
+#include "Source/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp"
+#include "Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp"
 #include <algorithm>
 #include <cassert>
 #include <vector>

@@ -1,4 +1,4 @@
-#include "Trie.hpp"
+#include "Source/Algorithm/Version2/Utils/Trie/Trie.hpp"
 #include <algorithm>
 
 Algorithm::Version2::Utils::Trie::Trie()

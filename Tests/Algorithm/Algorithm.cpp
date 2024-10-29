@@ -1,7 +1,7 @@
-#include "../../Source/Algorithm/Version1/Algorithm.hpp"
-#include "../../Source/Algorithm/Version2/Algorithm.hpp"
-#include "../../Source/Parameters.hpp"
-#include "Algorithm.hpp"
+#include "Source/Algorithm/Version1/Algorithm.hpp"
+#include "Source/Algorithm/Version2/Algorithm.hpp"
+#include "Source/Parameters.hpp"
+#include "Tests/Algorithm/Algorithm.hpp"
 #include <cassert>
 #include <vector>
 

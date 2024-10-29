@@ -1,6 +1,6 @@
-#include "../../Parameters.hpp"
-#include "../../ValidityChecks/ValidityChecks.hpp"
-#include "Algorithm.hpp"
+#include "Source/Algorithm/Version1/Algorithm.hpp"
+#include "Source/Parameters.hpp"
+#include "Source/ValidityChecks/ValidityChecks.hpp"
 #include <optional>
 #include <span>
 #include <vector>

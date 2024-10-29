@@ -1,12 +1,19 @@
 COMPILER = g++
 
 CPP_STANDARD = -std=c++23
+
 WARNING_FLAGS = -Wall -Wextra -pedantic -Werror
+
 SANITIZER_FLAGS = -fsanitize=address,undefined,signed-integer-overflow,bounds
+
 OPTIMIZATION_LEVEL = -O0
+
 LINK_TIME_OPTIMIZATION = #-flto
 
-COMPILER_FLAGS = $(CPP_STANDARD) $(WARNING_FLAGS) $(SANITIZER_FLAGS) $(OPTIMIZATION_LEVEL)
+PATH_TO_ROOT = ../
+INCLUDE_PATH = -I$(PATH_TO_ROOT)
+
+COMPILER_FLAGS = $(CPP_STANDARD) $(WARNING_FLAGS) $(SANITIZER_FLAGS) $(OPTIMIZATION_LEVEL) $(INCLUDE_PATH)
 
 SOURCE_FILES = \
 	Source/Algorithm/Version1/Algorithm.cpp \
@@ -22,7 +29,6 @@ TEST_FILES = \
 	Tests/Main.cpp \
 	Tests/ValidityChecks/ValidityChecks.cpp
 
-PATH_TO_ROOT = ../
 
 ALL_FILES = \
 	$(addprefix $(PATH_TO_ROOT), $(SOURCE_FILES)) \

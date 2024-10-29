@@ -1,7 +1,7 @@
 #ifndef SOURCE_VALIDITY_CHECKS
 #define SOURCE_VALIDITY_CHECKS
 
-#include "../Parameters.hpp"
+#include "Source/Parameters.hpp"
 #include <optional>
 
 namespace ValidityChecks
