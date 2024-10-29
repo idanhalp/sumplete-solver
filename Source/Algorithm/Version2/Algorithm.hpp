@@ -15,7 +15,7 @@
 /// reached a dead end, and continue or backtrack accordingly.
 ///
 /// This version is much superior to the first one, and is capable
-/// of solving a master-level 9x9 grids immediately.
+/// of solving master-level 9x9 grids immediately.
 namespace Algorithm::Version2
 {
 	/// @brief Finds a solution to the input.
