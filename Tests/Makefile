@@ -2,9 +2,9 @@ COMPILER = g++
 
 CPP_STANDARD = -std=c++23
 WARNING_FLAGS = -Wall -Wextra -pedantic -Werror
-SANITIZER_FLAGS = # -fsanitize=address,undefined,signed-integer-overflow,bounds
+SANITIZER_FLAGS = -fsanitize=address,undefined,signed-integer-overflow,bounds
 OPTIMIZATION_LEVEL = -O0
-LINK_TIME_OPTIMIZATION = # -flto
+LINK_TIME_OPTIMIZATION = #-flto
 
 COMPILER_FLAGS = $(CPP_STANDARD) $(WARNING_FLAGS) $(SANITIZER_FLAGS) $(OPTIMIZATION_LEVEL)
 
