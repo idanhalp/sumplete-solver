@@ -33,6 +33,10 @@ auto convert_mask_to_sequence(const unsigned int mask, const size_t set_size) ->
 	return sequence;
 }
 
+/// @brief   Generates all the boolean sequences that represent the subsets of `elements` whose sum is `target_sum`.
+/// @return  std::vector of boolean sequences.
+/// @note    No guarantee is made about the order of the output.
+/// @example `generate_valid_subsets({1, 2, 3, 4}, 3)` => `{{true, true, false, false}, {false, false, true, false}}`.
 auto Algorithm::Version2::Utils::generate_valid_subsets(std::span<const int> elements, const int target_sum) -> std::vector<std::vector<bool>>
 {
 	const auto masks = std::views::iota(0U, 1U << elements.size());
