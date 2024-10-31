@@ -16,6 +16,7 @@ namespace Algorithm::Version2::Utils
 	public:
 		Trie();
 
+		// Inserts each sequence to the data structure.
 		Trie(const std::vector<std::vector<bool>>& sequences); 
 
 		~Trie() = default;
