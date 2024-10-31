@@ -23,4 +23,4 @@ This document outlines the future plans for this project.
 ### Backend
 - [ ] Deprecation of `Algorithm::Version1`.
 - [ ] Documentation improvements.
-- [ ] Testing unsolvable inputs.
+- [X] Testing unsolvable inputs.

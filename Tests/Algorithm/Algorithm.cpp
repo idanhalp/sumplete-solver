@@ -207,4 +207,25 @@ auto Tests::run_algorithm_tests() -> void
 	const bool output_is_valid_7 = Auxiliary::check_output_validity(input_7, output_7);
 
 	assert(output_is_valid_7);
+
+	// -------------------------- UNSOLVABLE TEST CASE ------------------------------------
+	
+	const std::vector row_sums_8{0, 12, 1, 14};
+	const std::vector col_sums_8{0, 12, 5, 11};
+	const Params::input_grid_t grid_8
+	{
+		{7, 3, 3, 2},
+		{1, 3, 4, 5},
+		{3, 6, 1, 2},
+		{1, 9, 2, 5}
+	};
+
+	const Params::Input input_8 = {row_sums_8, col_sums_8, grid_8};
+	const Params::output_t version_1_output_8 = Algorithm::Version1::solve(input_8);
+	const Params::output_t version_2_output_8 = Algorithm::Version2::solve(input_8);
+	const bool version_1_output_is_valid_8 = !version_1_output_8.has_value() && version_1_output_8.error() == Params::SolutionError::NO_SOLUTION;
+	const bool version_2_output_is_valid_8 = !version_2_output_8.has_value() && version_2_output_8.error() == Params::SolutionError::NO_SOLUTION;;
+
+	assert(version_1_output_is_valid_8);
+	assert(version_2_output_is_valid_8);
 }
