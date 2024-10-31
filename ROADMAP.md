@@ -9,8 +9,8 @@ This document outlines the future plans for this project.
 
 ### Backend
 - [X] Functional solver.
-- [X] Efficient solver.
 - [X] Tested solver.
+- [X] Efficient solver.
 
 ### Frontend
 - [ ] Reactive grid.
