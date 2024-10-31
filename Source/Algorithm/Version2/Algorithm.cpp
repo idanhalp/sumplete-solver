@@ -106,8 +106,8 @@ auto Algorithm::Version2::Auxiliary::check_if_substitution_is_valid(const Cell c
 
 /// @brief Converts a list of cells to a vector of booleans that indicate whether each relevant cell is included in the sum.
 /// This function is used to interact with the tries.
-/// @note an `UNKNOWN` CellStatus indicates the end of the sequence. It is guaranteed that once such CellStatus is found, the rest of the
-/// are also `UNKNOWN`.
+/// @note an `UNKNOWN` CellStatus indicates the end of the sequence. 
+/// It is guaranteed that once such CellStatus is found, the rest are also `UNKNOWN`.
 /// @example `get_boolean_sequence({KEEP, DELETE, KEEP, DELETE})`  => `{true, false, true, false}`.
 /// @example `get_boolean_sequence({KEEP, DELETE, KEEP, UNKNOWN})` => `{true, false, true}`.
 auto Algorithm::Version2::Auxiliary::get_boolean_sequence(std::span<const Params::CellStatus> cells) -> std::vector<bool>
