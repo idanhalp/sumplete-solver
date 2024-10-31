@@ -15,7 +15,7 @@ This document outlines the future plans for this project.
 - [X] Efficient solver.
 
 ### Frontend
-- [ ] Frontend directory.
+- [X] Frontend directory.
 - [ ] Reactive grid.
 - [ ] Resizable grid.
 - [ ] Interaction with the solver.
@@ -23,7 +23,7 @@ This document outlines the future plans for this project.
 
 ## In progress
 ### General
-- [ ] Separation to *Backend* and *Frontend* directories.
+- [X] Separation to *Backend* and *Frontend* directories.
 
 ### Backend
 - [X] Deprecation of `Algorithm::Version1`.
