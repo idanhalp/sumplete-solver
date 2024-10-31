@@ -26,6 +26,7 @@ namespace Algorithm::Version1
 	/// @param input The algorithm's arguments.
 	/// @return A solution if exists, or a relevant `SolutionError` otherwise.
 	/// @note Does not assume for valid input.
+	[[deprecated("Use version 1.")]]
 	auto solve(const Params::Input& input) -> Params::output_t;
 };
 

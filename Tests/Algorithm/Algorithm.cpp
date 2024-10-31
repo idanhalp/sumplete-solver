@@ -1,4 +1,3 @@
-#include "Source/Algorithm/Version1/Algorithm.hpp"
 #include "Source/Algorithm/Version2/Algorithm.hpp"
 #include "Source/Parameters.hpp"
 #include "Tests/Algorithm/Algorithm.hpp"
@@ -64,13 +63,10 @@ auto Tests::run_algorithm_tests() -> void
 	};
 
 	const Params::Input input_1 = {row_sums_1, col_sums_1, grid_1};
-	const Params::output_t version_1_output_1 = Algorithm::Version1::solve(input_1);
-	const Params::output_t version_2_output_1 = Algorithm::Version2::solve(input_1);
-	const bool version_1_output_is_valid_1 = Auxiliary::check_output_validity(input_1, version_1_output_1);
-	const bool version_2_output_is_valid_1 = Auxiliary::check_output_validity(input_1, version_2_output_1);
+	const Params::output_t output_1 = Algorithm::Version2::solve(input_1);
+	const bool output_is_valid_1 = Auxiliary::check_output_validity(input_1, output_1);
 
-	assert(version_1_output_is_valid_1);
-	assert(version_2_output_is_valid_1);
+	assert(output_is_valid_1);
 
 	// ---------------------------------------------------------------------------------
 
@@ -85,13 +81,10 @@ auto Tests::run_algorithm_tests() -> void
 	};
 	
 	const Params::Input input_2 = {row_sums_2, col_sums_2, grid_2};
-	const Params::output_t version_1_output_2 = Algorithm::Version1::solve(input_2);
-	const Params::output_t version_2_output_2 = Algorithm::Version2::solve(input_2);
-	const bool version_1_output_is_valid_2 = Auxiliary::check_output_validity(input_2, version_1_output_2);
-	const bool version_2_output_is_valid_2 = Auxiliary::check_output_validity(input_2, version_2_output_2);
+	const Params::output_t output_2 = Algorithm::Version2::solve(input_2);
+	const bool output_is_valid_2 = Auxiliary::check_output_validity(input_2, output_2);
 
-	assert(version_1_output_is_valid_2);
-	assert(version_2_output_is_valid_2);
+	assert(output_is_valid_2);
 
 	// ---------------------------------------------------------------------------------
 
@@ -107,13 +100,10 @@ auto Tests::run_algorithm_tests() -> void
 	};
 
 	const Params::Input input_3 = {row_sums_3, col_sums_3, grid_3};
-	const Params::output_t version_1_output_3 = Algorithm::Version1::solve(input_3);
-	const Params::output_t version_2_output_3 = Algorithm::Version2::solve(input_3);
-	const bool version_1_output_is_valid_3 = Auxiliary::check_output_validity(input_3, version_1_output_3);
-	const bool version_2_output_is_valid_3 = Auxiliary::check_output_validity(input_3, version_2_output_3);
+	const Params::output_t output_3 = Algorithm::Version2::solve(input_3);
+	const bool output_is_valid_3 = Auxiliary::check_output_validity(input_3, output_3);
 
-	assert(version_1_output_is_valid_3);
-	assert(version_2_output_is_valid_3);
+	assert(output_is_valid_3);
 
 	// ---------------------------------------------------------------------------------
 
@@ -130,13 +120,10 @@ auto Tests::run_algorithm_tests() -> void
 	};
 
 	const Params::Input input_4 = {row_sums_4, col_sums_4, grid_4};
-	const Params::output_t version_1_output_4 = Algorithm::Version1::solve(input_4);
-	const Params::output_t version_2_output_4 = Algorithm::Version2::solve(input_4);
-	const bool version_1_output_is_valid_4 = Auxiliary::check_output_validity(input_4, version_1_output_4);
-	const bool version_2_output_is_valid_4 = Auxiliary::check_output_validity(input_4, version_2_output_4);
+	const Params::output_t output_4 = Algorithm::Version2::solve(input_4);
+	const bool output_is_valid_4 = Auxiliary::check_output_validity(input_4, output_4);
 
-	assert(version_1_output_is_valid_4);
-	assert(version_2_output_is_valid_4);
+	assert(output_is_valid_4);
 
 	// ---------------------------------------------------------------------------------
 
@@ -154,13 +141,10 @@ auto Tests::run_algorithm_tests() -> void
 	};
 
 	const Params::Input input_5 = {row_sums_5, col_sums_5, grid_5};
-	const Params::output_t version_1_output_5 = Algorithm::Version1::solve(input_5);
-	const Params::output_t version_2_output_5 = Algorithm::Version2::solve(input_5);
-	const bool version_1_output_is_valid_5 = Auxiliary::check_output_validity(input_5, version_1_output_5);
-	const bool version_2_output_is_valid_5 = Auxiliary::check_output_validity(input_5, version_2_output_5);
+	const Params::output_t output_5 = Algorithm::Version2::solve(input_5);
+	const bool output_is_valid_5 = Auxiliary::check_output_validity(input_5, output_5);
 
-	assert(version_1_output_is_valid_5);
-	assert(version_2_output_is_valid_5);
+	assert(output_is_valid_5);
 
 	// -------------------------- HARD TEST CASE ------------------------------------
 
@@ -221,11 +205,8 @@ auto Tests::run_algorithm_tests() -> void
 	};
 
 	const Params::Input input_8 = {row_sums_8, col_sums_8, grid_8};
-	const Params::output_t version_1_output_8 = Algorithm::Version1::solve(input_8);
-	const Params::output_t version_2_output_8 = Algorithm::Version2::solve(input_8);
-	const bool version_1_output_is_valid_8 = !version_1_output_8.has_value() && version_1_output_8.error() == Params::SolutionError::NO_SOLUTION;
-	const bool version_2_output_is_valid_8 = !version_2_output_8.has_value() && version_2_output_8.error() == Params::SolutionError::NO_SOLUTION;;
+	const Params::output_t output_8 = Algorithm::Version2::solve(input_8);
+	const bool output_is_valid_8 = !output_8.has_value() && output_8.error() == Params::SolutionError::NO_SOLUTION;;
 
-	assert(version_1_output_is_valid_8);
-	assert(version_2_output_is_valid_8);
+	assert(output_is_valid_8);
 }
