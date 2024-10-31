@@ -19,6 +19,7 @@ namespace Algorithm::Version2::Auxiliary
 	
 	auto check_if_substitution_is_valid(const Cell cell, const Params::output_grid_t& output, std::span<const Utils::Trie> valid_rows_sequences, std::span<const Utils::Trie> valid_cols_sequences) -> bool;
 
+	// Converts a list of cells to a vector of booleans that indicate whether each relevant cell is included in the sum.
 	auto get_boolean_sequence(std::span<const Params::CellStatus> cells) -> std::vector<bool>;
 
 	// Processes the rows and inserts all the valid subsets that sum to a row's target into a trie.
@@ -103,6 +104,12 @@ auto Algorithm::Version2::Auxiliary::check_if_substitution_is_valid(const Cell c
 	return row_is_valid && col_is_valid;
 }
 
+/// @brief Converts a list of cells to a vector of booleans that indicate whether each relevant cell is included in the sum.
+/// This function is used to interact with the tries.
+/// @note an `UNKNOWN` CellStatus indicates the end of the sequence. It is guaranteed that once such CellStatus is found, the rest of the
+/// are also `UNKNOWN`.
+/// @example `get_boolean_sequence({KEEP, DELETE, KEEP, DELETE}`  => `{true, false, true, false}`.
+/// @example `get_boolean_sequence({KEEP, DELETE, KEEP, UNKNOWN}` => `{true, false, true}`.
 auto Algorithm::Version2::Auxiliary::get_boolean_sequence(std::span<const Params::CellStatus> cells) -> std::vector<bool>
 {
 	const auto cell_is_filled = [] (const Params::CellStatus cell_status) -> bool { return cell_status != Params::CellStatus::UNKNOWN; };
