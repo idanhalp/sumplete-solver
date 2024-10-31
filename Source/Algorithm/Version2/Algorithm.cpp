@@ -25,6 +25,7 @@ namespace Algorithm::Version2::Auxiliary
 
 	auto get_valid_cols_sequences(const Params::Input& input) -> std::vector<Utils::Trie>;
 
+	// Returns the `col_index`th column of `grid` as a std::vector.
 	template <typename T>
 	auto get_col(size_t col_index, const std::vector<std::vector<T>>& grid) -> std::vector<T>;
 
@@ -142,6 +143,10 @@ auto Algorithm::Version2::Auxiliary::get_valid_cols_sequences(const Params::Inpu
 	return valid_cols_sequences;
 }
 
+/// @brief Returns the specified column as a `std::vector`.
+/// @return std::vector col, s.t `col.size() == grid.size()` and `col[row_index] == grid[row_index][col_index]`.
+/// @example `get_col(0, {{1, 2}, {3, 4}})` => `{1, 3}`.
+/// @example `get_col(1, {{1, 2}, {3, 4}})` => `{2, 4}`.
 template <typename T>
 auto Algorithm::Version2::Auxiliary::get_col(size_t col_index, const std::vector<std::vector<T>>& grid) -> std::vector<T>
 {
