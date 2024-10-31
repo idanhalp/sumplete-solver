@@ -108,8 +108,8 @@ auto Algorithm::Version2::Auxiliary::check_if_substitution_is_valid(const Cell c
 /// This function is used to interact with the tries.
 /// @note an `UNKNOWN` CellStatus indicates the end of the sequence. It is guaranteed that once such CellStatus is found, the rest of the
 /// are also `UNKNOWN`.
-/// @example `get_boolean_sequence({KEEP, DELETE, KEEP, DELETE}`  => `{true, false, true, false}`.
-/// @example `get_boolean_sequence({KEEP, DELETE, KEEP, UNKNOWN}` => `{true, false, true}`.
+/// @example `get_boolean_sequence({KEEP, DELETE, KEEP, DELETE})`  => `{true, false, true, false}`.
+/// @example `get_boolean_sequence({KEEP, DELETE, KEEP, UNKNOWN})` => `{true, false, true}`.
 auto Algorithm::Version2::Auxiliary::get_boolean_sequence(std::span<const Params::CellStatus> cells) -> std::vector<bool>
 {
 	const auto cell_is_filled = [] (const Params::CellStatus cell_status) -> bool { return cell_status != Params::CellStatus::UNKNOWN; };
