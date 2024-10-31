@@ -21,8 +21,10 @@ namespace Algorithm::Version2::Auxiliary
 
 	auto get_boolean_sequence(std::span<const Params::CellStatus> cells) -> std::vector<bool>;
 
+	// Processes the rows and inserts all the valid subsets that sum to a row's target into a trie.
 	auto get_valid_rows_sequences(const Params::Input& input) -> std::vector<Utils::Trie>;
 
+	// Processes the columns and inserts all the valid subsets that sum to a column's target into a trie.
 	auto get_valid_cols_sequences(const Params::Input& input) -> std::vector<Utils::Trie>;
 
 	// Returns the `col_index`th column of `grid` as a std::vector.
@@ -114,6 +116,9 @@ auto Algorithm::Version2::Auxiliary::get_boolean_sequence(std::span<const Params
 	return sequence;
 }
 
+/// @brief Processes the rows and inserts all the valid subsets that sum to a row's target into a trie.
+/// This function preprocesses the input to make the process of pruning dead end substitutions more efficient.
+/// @returns a std::vector of tries, s.t each trie contains the subsequences that sum to its respective row's target. 
 auto Algorithm::Version2::Auxiliary::get_valid_rows_sequences(const Params::Input& input) -> std::vector<Utils::Trie>
 {
 	std::vector<Utils::Trie> valid_rows_sequences;
@@ -127,6 +132,9 @@ auto Algorithm::Version2::Auxiliary::get_valid_rows_sequences(const Params::Inpu
 	return valid_rows_sequences;
 }
 
+/// @brief Processes the columns and inserts all the valid subsets that sum to a column's target into a trie.
+/// This function preprocesses the input to make the process of pruning dead end substitutions more efficient.
+/// @returns a std::vector of tries, s.t each trie contains the subsequences that sum to its respective column's target.
 auto Algorithm::Version2::Auxiliary::get_valid_cols_sequences(const Params::Input& input) -> std::vector<Utils::Trie>
 {
 	std::vector<Utils::Trie> valid_cols_sequences;
