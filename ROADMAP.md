@@ -9,17 +9,22 @@ This document outlines the future plans for this project.
 - [ ] Comprehensive README file.    
 
 ### Backend
+- [X] Backend directory.
 - [X] Functional solver.
 - [X] Tested solver.
 - [X] Efficient solver.
 
 ### Frontend
+- [ ] Frontend directory.
 - [ ] Reactive grid.
 - [ ] Resizable grid.
 - [ ] Interaction with the solver.
 - [ ] Displaying the solution.
 
 ## In progress
+### General
+- [ ] Separation to *Backend* and *Frontend* directories.
+
 ### Backend
 - [X] Deprecation of `Algorithm::Version1`.
 - [ ] Documentation improvements.
