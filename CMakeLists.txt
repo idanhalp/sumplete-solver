@@ -2,14 +2,30 @@ cmake_minimum_required(VERSION 3.16)
 
 project(SumpleteSolverQt VERSION 0.1 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
+# Define source files with paths relative to the root
 qt_add_executable(appSumpleteSolverQt
-    main.cpp
+    ${CMAKE_SOURCE_DIR}/Backend/Source/Algorithm/Version1/Algorithm.cpp
+    ${CMAKE_SOURCE_DIR}/Backend/Source/Algorithm/Version2/Algorithm.cpp
+    ${CMAKE_SOURCE_DIR}/Backend/Source/Algorithm/Version2/Utils/Trie/Trie.cpp
+    ${CMAKE_SOURCE_DIR}/Backend/Source/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
+    ${CMAKE_SOURCE_DIR}/Backend/Source/ValidityChecks/ValidityChecks.cpp
+    ${CMAKE_SOURCE_DIR}/Backend/Tests/Algorithm/Algorithm.cpp
+    ${CMAKE_SOURCE_DIR}/Backend/Tests/Algorithm/Version2/Trie/Trie.cpp
+    ${CMAKE_SOURCE_DIR}/Backend/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
+    ${CMAKE_SOURCE_DIR}/Backend/Tests/Main.cpp
+    ${CMAKE_SOURCE_DIR}/Backend/Tests/ValidityChecks/ValidityChecks.cpp
+)
+
+target_include_directories(appSumpleteSolverQt PRIVATE
+    ${CMAKE_SOURCE_DIR}/Backend/Source
+    ${CMAKE_SOURCE_DIR}/Backend/Tests
 )
 
 qt_add_qml_module(appSumpleteSolverQt
