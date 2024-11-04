@@ -1,5 +1,4 @@
 #include "Backend/Source/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp"
-#include <algorithm>
 #include <ranges>
 #include <span>
 #include <vector>
@@ -8,13 +7,13 @@ auto check_if_subset_is_valid(std::span<const int> elements, const int target_su
 {
 	int subset_sum = 0;
 
-	for (const auto [index, element] : std::views::enumerate(elements))
+	for (size_t index = 0; index < elements.size(); ++index)
 	{
 		const bool element_is_included_in_subset = (subset_mask & (1U << index)) != 0;
 
 		if (element_is_included_in_subset)
 		{
-			subset_sum += element;
+			subset_sum += elements[index];
 		}
 	}
 
