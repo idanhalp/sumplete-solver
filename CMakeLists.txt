@@ -21,6 +21,7 @@ qt_add_executable(appSumpleteSolverQt
     ${CMAKE_SOURCE_DIR}/Backend/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
     ${CMAKE_SOURCE_DIR}/Backend/Tests/Main.cpp
     ${CMAKE_SOURCE_DIR}/Backend/Tests/ValidityChecks/ValidityChecks.cpp
+    ${CMAKE_SOURCE_DIR}/Frontend/main.cpp
 )
 
 target_include_directories(appSumpleteSolverQt PRIVATE
@@ -32,7 +33,7 @@ qt_add_qml_module(appSumpleteSolverQt
     URI SumpleteSolverQt
     VERSION 1.0
     QML_FILES
-        Main.qml
+	QML_FILES Frontend/Main.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
