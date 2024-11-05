@@ -21,7 +21,7 @@ qt_add_executable(appSumpleteSolverQt
     ${CMAKE_SOURCE_DIR}/Backend/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
     ${CMAKE_SOURCE_DIR}/Backend/Tests/Main.cpp
     ${CMAKE_SOURCE_DIR}/Backend/Tests/ValidityChecks/ValidityChecks.cpp
-    ${CMAKE_SOURCE_DIR}/Frontend/main.cpp
+    ${CMAKE_SOURCE_DIR}/Frontend/Main.cpp
 )
 
 target_include_directories(appSumpleteSolverQt PRIVATE
