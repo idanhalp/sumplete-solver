@@ -30,6 +30,8 @@ qt_add_executable(appSumpleteSolverQt
     ${CMAKE_SOURCE_DIR}/Backend/Tests/Main.cpp
     ${CMAKE_SOURCE_DIR}/Backend/Tests/ValidityChecks/ValidityChecks.cpp
     ${CMAKE_SOURCE_DIR}/Backend/Tests/ValidityChecks/ValidityChecks.hpp
+    ${CMAKE_SOURCE_DIR}/Frontend/Components/Grid/Grid.cpp
+    ${CMAKE_SOURCE_DIR}/Frontend/Components/Grid/Grid.hpp
     ${CMAKE_SOURCE_DIR}/Frontend/Main.cpp
 )
 
@@ -42,7 +44,8 @@ qt_add_qml_module(appSumpleteSolverQt
     URI SumpleteSolverQt
     VERSION 1.0
     QML_FILES
-	QML_FILES Frontend/Main.qml
+	Frontend/Components/Grid/Grid.qml
+	Frontend/Main.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
