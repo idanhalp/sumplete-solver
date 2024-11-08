@@ -1,5 +1,6 @@
 import QtQuick
 import "Components/Grid"
+import "Components/SolveButton"
 
 Window {
 	id: root
@@ -10,8 +11,19 @@ Window {
 	visible: true
 
 	Grid {
+		id: grid
 		anchors.centerIn: parent
 		measurements: 400
 		size: 3
+	}
+
+	SolveButton {
+		id: solveButton
+
+		anchors {
+			top: grid.bottom
+			horizontalCenter: grid.horizontalCenter
+			topMargin: 10
+		}
 	}
 }
