@@ -66,6 +66,11 @@ qt_add_qml_module(appSumpleteSolverQt
 	Source/Frontend/Components/RowsSums/RowsSums.qml
 	Source/Frontend/Components/SolveButton/SolveButton.qml
 	Source/Frontend/Main.qml
+
+    # C++ files that should be converted to QML using the QML_ELEMENT macro.
+    SOURCES
+	Source/Frontend/MainModule/MainModule.cpp
+	Source/Frontend/MainModule/MainModule.hpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
