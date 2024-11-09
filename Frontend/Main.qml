@@ -18,23 +18,23 @@ Window {
 		size: 3
 	}
 
-	SolveButton {
-		id: solveButton
+	Row {
+		id: solveButtonAndSizeDropdown
 
 		anchors {
-			top: grid.bottom
 			horizontalCenter: grid.horizontalCenter
-			topMargin: 10
+			top: grid.bottom
+			topMargin: 20
 		}
-	}
 
-	GridSizeDropdown {
-		id: gridSizeDropdown
+		spacing: 20
 
-		anchors {
-			verticalCenter: solveButton.verticalCenter
-			right: solveButton.left
-			rightMargin: 10
+		GridSizeDropdown {
+			id: gridSizeDropdown
+		}
+
+		SolveButton {
+			id: solveButton
 		}
 	}
 }
