@@ -36,6 +36,8 @@ qt_add_executable(appSumpleteSolverQt
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/SolveButton/SolveButton.cpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/SolveButton/SolveButton.hpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Main.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Frontend/MainModule/MainModule.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Frontend/MainModule/MainModule.hpp
 
     # Tests files
     ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Algorithm.cpp
