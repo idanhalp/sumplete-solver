@@ -1,4 +1,5 @@
 import QtQuick
+import "Components/ColsSums"
 import "Components/Grid"
 import "Components/GridSizeDropdown"
 import "Components/RowsSums"
@@ -17,6 +18,19 @@ Window {
 		anchors.centerIn: parent
 		measurements: 400
 		size: 4
+	}
+
+	ColsSums {
+		id: colsSums
+
+		anchors {
+			verticalCenter: grid.verticalCenter
+			left: grid.right
+			leftMargin: 20
+		}
+
+		width: 50
+		height: grid.height
 	}
 
 	RowsSums {

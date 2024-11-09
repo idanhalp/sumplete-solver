@@ -34,6 +34,8 @@ qt_add_executable(appSumpleteSolverQt
     ${CMAKE_SOURCE_DIR}/Frontend/Components/Grid/Grid.hpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/GridSizeDropdown/GridSizeDropdown.cpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/GridSizeDropdown/GridSizeDropdown.hpp
+    ${CMAKE_SOURCE_DIR}/Frontend/Components/ColsSums/ColsSums.cpp
+    ${CMAKE_SOURCE_DIR}/Frontend/Components/ColsSums/ColsSums.hpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/RowsSums/RowsSums.cpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/RowsSums/RowsSums.hpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/SolveButton/SolveButton.cpp
@@ -52,6 +54,7 @@ qt_add_qml_module(appSumpleteSolverQt
     QML_FILES
 	Frontend/Components/Grid/Grid.qml
 	Frontend/Components/GridSizeDropdown/GridSizeDropdown.qml
+	Frontend/Components/ColsSums/ColsSums.qml
 	Frontend/Components/RowsSums/RowsSums.qml
 	Frontend/Components/SolveButton/SolveButton.qml
 	Frontend/Main.qml
