@@ -19,7 +19,7 @@ Window {
 		size: 4
 	}
 
-	RowSums {
+	RowsSums {
 		id: rowsSums
 
 		anchors {
