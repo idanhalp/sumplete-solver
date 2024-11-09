@@ -32,6 +32,8 @@ qt_add_executable(appSumpleteSolverQt
     ${CMAKE_SOURCE_DIR}/Backend/Tests/ValidityChecks/ValidityChecks.hpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/Grid/Grid.cpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/Grid/Grid.hpp
+    ${CMAKE_SOURCE_DIR}/Frontend/Components/GridSizeDropdown/GridSizeDropdown.cpp
+    ${CMAKE_SOURCE_DIR}/Frontend/Components/GridSizeDropdown/GridSizeDropdown.hpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/SolveButton/SolveButton.cpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/SolveButton/SolveButton.hpp
     ${CMAKE_SOURCE_DIR}/Frontend/Main.cpp
@@ -47,6 +49,7 @@ qt_add_qml_module(appSumpleteSolverQt
     VERSION 1.0
     QML_FILES
 	Frontend/Components/Grid/Grid.qml
+	Frontend/Components/GridSizeDropdown/GridSizeDropdown.qml
 	Frontend/Components/SolveButton/SolveButton.qml
 	Frontend/Main.qml
 )
@@ -63,7 +66,7 @@ set_target_properties(appSumpleteSolverQt PROPERTIES
 )
 
 target_link_libraries(appSumpleteSolverQt
-    PRIVATE Qt6::Quick
+    PRIVATE Qt6::Quick Qt6::qtquickcontrols2plugin
 )
 
 include(GNUInstallDirs)

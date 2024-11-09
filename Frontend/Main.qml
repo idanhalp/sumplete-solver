@@ -1,5 +1,6 @@
 import QtQuick
 import "Components/Grid"
+import "Components/GridSizeDropdown"
 import "Components/SolveButton"
 
 Window {
@@ -24,6 +25,16 @@ Window {
 			top: grid.bottom
 			horizontalCenter: grid.horizontalCenter
 			topMargin: 10
+		}
+	}
+
+	GridSizeDropdown {
+		id: gridSizeDropdown
+
+		anchors {
+			verticalCenter: solveButton.verticalCenter
+			right: solveButton.left
+			rightMargin: 10
 		}
 	}
 }
