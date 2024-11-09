@@ -11,16 +11,20 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 # Define source files with paths relative to the root
 qt_add_executable(appSumpleteSolverQt
-    ${CMAKE_SOURCE_DIR}/Source/Backend//Algorithm/Version1/Algorithm.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend//Algorithm/Version1/Algorithm.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend//Algorithm/Version2/Algorithm.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend//Algorithm/Version2/Algorithm.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend//Algorithm/Version2/Utils/Trie/Trie.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend//Algorithm/Version2/Utils/Trie/Trie.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend//Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend//Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend//ValidityChecks/ValidityChecks.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend//ValidityChecks/ValidityChecks.hpp
+
+    # Backend files
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version1/Algorithm.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version1/Algorithm.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Algorithm.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Algorithm.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/Trie/Trie.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/Trie/Trie.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.hpp
+
+    # Frontend files
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/Grid/Grid.cpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/Grid/Grid.hpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/GridSizeDropdown/GridSizeDropdown.cpp
@@ -32,6 +36,8 @@ qt_add_executable(appSumpleteSolverQt
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/SolveButton/SolveButton.cpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/SolveButton/SolveButton.hpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Main.cpp
+
+    # Tests files
     ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Algorithm.cpp
     ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Algorithm.hpp
     ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/Trie/Trie.cpp
