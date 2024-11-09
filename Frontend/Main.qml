@@ -1,6 +1,7 @@
 import QtQuick
 import "Components/Grid"
 import "Components/GridSizeDropdown"
+import "Components/RowsSums"
 import "Components/SolveButton"
 
 Window {
@@ -15,15 +16,28 @@ Window {
 		id: grid
 		anchors.centerIn: parent
 		measurements: 400
-		size: 3
+		size: 4
+	}
+
+	RowSums {
+		id: rowsSums
+
+		anchors {
+			horizontalCenter: grid.horizontalCenter
+			top: grid.bottom
+			topMargin: 20
+		}
+
+		width: grid.width
+		height: 50
 	}
 
 	Row {
 		id: solveButtonAndSizeDropdown
 
 		anchors {
-			horizontalCenter: grid.horizontalCenter
-			top: grid.bottom
+			horizontalCenter: rowsSums.horizontalCenter
+			top: rowsSums.bottom
 			topMargin: 20
 		}
 
