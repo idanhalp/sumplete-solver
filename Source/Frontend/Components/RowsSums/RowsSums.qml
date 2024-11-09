@@ -5,6 +5,7 @@ import QtQuick 6.5
 ListView {
 	id: root
 
+	interactive: false
 	orientation: ListView.Horizontal
 	model: ["1", "2", "3", "4"]
 
