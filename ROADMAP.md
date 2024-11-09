@@ -16,6 +16,8 @@ This document outlines the future plans for this project.
 
 ### Frontend
 - [X] Frontend directory.
+- [X] General design.
+- [ ] Descriptive header.
 - [ ] Reactive grid.
 - [ ] Resizable grid.
 - [ ] Interaction with the solver.
@@ -24,6 +26,7 @@ This document outlines the future plans for this project.
 ## In progress
 ### General
 - [X] Separation to *Backend* and *Frontend* directories.
+- [X] Reorganization to *Source* and *Tests* directories.
 
 ### Backend
 - [X] Deprecation of `Algorithm::Version1`.
