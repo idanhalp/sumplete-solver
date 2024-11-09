@@ -1,5 +1,5 @@
 #include "Backend/Source/Algorithm/Version2/Utils/Trie/Trie.hpp"
-#include "Backend/Tests/Algorithm/Version2/Trie/Trie.hpp"
+#include "Tests/Algorithm/Version2/Trie/Trie.hpp"
 #include <cassert>
 
 auto Tests::Version2::run_trie_tests() -> void

@@ -1,6 +1,6 @@
 #include "Backend/Source/Parameters.hpp"
 #include "Backend/Source/ValidityChecks/ValidityChecks.hpp"
-#include "Backend/Tests/ValidityChecks/ValidityChecks.hpp"
+#include "Tests/ValidityChecks/ValidityChecks.hpp"
 #include <cassert>
 #include <optional>
 #include <vector>

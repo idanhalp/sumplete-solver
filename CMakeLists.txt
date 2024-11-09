@@ -21,15 +21,15 @@ qt_add_executable(appSumpleteSolverQt
     ${CMAKE_SOURCE_DIR}/Backend/Source/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
     ${CMAKE_SOURCE_DIR}/Backend/Source/ValidityChecks/ValidityChecks.cpp
     ${CMAKE_SOURCE_DIR}/Backend/Source/ValidityChecks/ValidityChecks.hpp
-    ${CMAKE_SOURCE_DIR}/Backend/Tests/Algorithm/Algorithm.cpp
-    ${CMAKE_SOURCE_DIR}/Backend/Tests/Algorithm/Algorithm.hpp
-    ${CMAKE_SOURCE_DIR}/Backend/Tests/Algorithm/Version2/Trie/Trie.cpp
-    ${CMAKE_SOURCE_DIR}/Backend/Tests/Algorithm/Version2/Trie/Trie.hpp
-    ${CMAKE_SOURCE_DIR}/Backend/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
-    ${CMAKE_SOURCE_DIR}/Backend/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
-    ${CMAKE_SOURCE_DIR}/Backend/Tests/Main.cpp
-    ${CMAKE_SOURCE_DIR}/Backend/Tests/ValidityChecks/ValidityChecks.cpp
-    ${CMAKE_SOURCE_DIR}/Backend/Tests/ValidityChecks/ValidityChecks.hpp
+    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Algorithm.cpp
+    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Algorithm.hpp
+    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/Trie/Trie.cpp
+    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/Trie/Trie.hpp
+    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
+    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
+    ${CMAKE_SOURCE_DIR}/Tests/Main.cpp
+    ${CMAKE_SOURCE_DIR}/Tests/ValidityChecks/ValidityChecks.cpp
+    ${CMAKE_SOURCE_DIR}/Tests/ValidityChecks/ValidityChecks.hpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/Grid/Grid.cpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/Grid/Grid.hpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/GridSizeDropdown/GridSizeDropdown.cpp
@@ -40,12 +40,12 @@ qt_add_executable(appSumpleteSolverQt
     ${CMAKE_SOURCE_DIR}/Frontend/Components/RowsSums/RowsSums.hpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/SolveButton/SolveButton.cpp
     ${CMAKE_SOURCE_DIR}/Frontend/Components/SolveButton/SolveButton.hpp
-    ${CMAKE_SOURCE_DIR}/Frontend/Main.cpp
+    # ${CMAKE_SOURCE_DIR}/Frontend/Main.cpp
 )
 
+# Addresses should be relative to the root.
 target_include_directories(appSumpleteSolverQt PRIVATE
-    ${CMAKE_SOURCE_DIR}/Backend/Source
-    ${CMAKE_SOURCE_DIR}/Backend/Tests
+    ${CMAKE_SOURCE_DIR}
 )
 
 qt_add_qml_module(appSumpleteSolverQt

@@ -1,6 +1,6 @@
 #include "Backend/Source/Algorithm/Version2/Algorithm.hpp"
 #include "Backend/Source/Parameters.hpp"
-#include "Backend/Tests/Algorithm/Algorithm.hpp"
+#include "Tests/Algorithm/Algorithm.hpp"
 #include <cassert>
 #include <vector>
 

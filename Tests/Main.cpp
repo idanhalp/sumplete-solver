@@ -1,7 +1,7 @@
-#include "Backend/Tests/Algorithm/Algorithm.hpp"
-#include "Backend/Tests/Algorithm/Version2/Trie/Trie.hpp"
-#include "Backend/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp"
-#include "Backend/Tests/ValidityChecks/ValidityChecks.hpp"
+#include "Tests/Algorithm/Algorithm.hpp"
+#include "Tests/Algorithm/Version2/Trie/Trie.hpp"
+#include "Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp"
+#include "Tests/ValidityChecks/ValidityChecks.hpp"
 #include <cstdlib>
 #include <functional>
 #include <print>
@@ -35,9 +35,9 @@ auto run_all_tests() -> void
 	std::println("All tests passed!");
 }
 
-// auto main() -> int
-// {
-// 	run_all_tests();
+auto main() -> int
+{
+	run_all_tests();
 
-// 	return EXIT_SUCCESS;
-// }
+	return EXIT_SUCCESS;
+}
