@@ -1,7 +1,7 @@
 #ifndef TRIE_HPP
 #define TRIE_HPP
 
-#include "Backend/Source/Algorithm/Version2/Utils/Trie/TrieNode.hpp"
+#include "Source/Backend/Algorithm/Version2/Utils/Trie/TrieNode.hpp"
 #include <memory>
 #include <vector>
 

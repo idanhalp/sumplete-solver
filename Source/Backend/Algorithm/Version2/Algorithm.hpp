@@ -1,7 +1,7 @@
 #ifndef SOURCE_ALGORITHM_VERSION_2_HPP
 #define SOURCE_ALGORITHM_VERSION_2_HPP
 
-#include "Backend/Source/Parameters.hpp"
+#include "Source/Backend/Parameters.hpp"
 
 /// @brief Optimized algorithm for finding a solution.
 ///
