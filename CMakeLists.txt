@@ -51,9 +51,9 @@ qt_add_executable(appSumpleteSolverQt
     ${CMAKE_SOURCE_DIR}/Tests/ValidityChecks/ValidityChecks.hpp
 )
 
-# Addresses should be relative to the root.
 target_include_directories(appSumpleteSolverQt PRIVATE
-    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR} # Addresses should be relative to the root.
+    ${CMAKE_SOURCE_DIR}/Source/Frontend/MainModule
 )
 
 qt_add_qml_module(appSumpleteSolverQt

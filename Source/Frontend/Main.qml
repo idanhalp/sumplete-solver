@@ -1,4 +1,5 @@
 import QtQuick
+import SumpleteSolverQt
 import "Components/ColsSums"
 import "Components/Grid"
 import "Components/GridSizeDropdown"
@@ -12,6 +13,10 @@ Window {
 	width: 640
 	height: 480
 	visible: true
+
+	MainModule {
+		id: mainModule
+	}
 
 	Grid {
 		id: grid
