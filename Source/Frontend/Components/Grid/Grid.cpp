@@ -25,10 +25,8 @@ auto Components::Grid::change_size(const size_t new_size) -> void
 {
 	const bool size_changed = data.size() != new_size;
 
-	if (!size_changed)
+	if (size_changed)
 	{
-		return;
+		data.resize(new_size, QList<std::optional<int>>(new_size));
 	}
-
-	data.resize(new_size, QList<std::optional<int>>(new_size));
 }
