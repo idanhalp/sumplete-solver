@@ -1,11 +1,11 @@
 import QtQuick 6.5
+import QtQuick.Controls
 
-Rectangle {
+Button {
 	id: root
 
 	width: 150
 	height: 50
-	color: "gray"
 
 	Text {
 		id: text
