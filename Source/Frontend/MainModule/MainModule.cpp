@@ -5,24 +5,24 @@ MainModule::MainModule()
 	resize(3);
 }
 
-int MainModule::rowCount(const QModelIndex& parent) const
+auto MainModule::rowCount(const QModelIndex& parent) const -> int
 {
 	Q_UNUSED(parent);
 
 	return m_grid_buffer.count(); // Size.
 }
 
-QVariant MainModule::data(const QModelIndex &index, int role) const
+auto MainModule::data(const QModelIndex& index, int role) const -> QVariant
 {
 
 }
 
-bool MainModule::removeRows(int row, int count, const QModelIndex &parent)
+auto MainModule::removeRows(int row, int count, const QModelIndex& parent) -> bool
 {
 
 }
 
-QHash<int, QByteArray> MainModule::roleNames() const
+auto MainModule::roleNames() const -> QHash<int, QByteArray>
 {
 	return {};
 }
@@ -35,23 +35,22 @@ auto MainModule::resize(const int new_size) -> void
 	beginResetModel();
 
 	m_grid_buffer.resize(new_size * new_size);
-
-	endResetModel();
-
 	m_rows_sums.resize(new_size);
 	m_cols_sums.resize(new_size);
+
+	endResetModel();
 }
 
-int MainModule::size() const
+auto MainModule::size() const -> int
 {
 	return m_size;
 }
 
-void MainModule::setSize(int newSize)
+auto MainModule::setSize(int new_size) -> void
 {
-	if (m_size == newSize)
+	if (m_size == new_size)
 		return;
 
-	m_size = newSize;
-	emit size();
+	m_size = new_size;
+	emit sizeChanged();
 }
