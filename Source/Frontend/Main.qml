@@ -21,7 +21,7 @@ Window {
 	Grid {
 		id: grid
 		anchors.centerIn: parent
-		measurements: 500
+		measurements: 600
 	}
 
 	ColsSums {

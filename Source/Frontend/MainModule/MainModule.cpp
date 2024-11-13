@@ -2,7 +2,7 @@
 
 MainModule::MainModule()
 {
-	resize(3);
+	resize(9);
 }
 
 int MainModule::rowCount(const QModelIndex& parent) const
