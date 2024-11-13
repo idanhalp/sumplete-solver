@@ -2,7 +2,7 @@
 
 MainModule::MainModule()
 {
-	resize(9);
+	resize(3);
 }
 
 int MainModule::rowCount(const QModelIndex& parent) const
@@ -30,7 +30,14 @@ QHash<int, QByteArray> MainModule::roleNames() const
 auto MainModule::resize(const int new_size) -> void
 {
 	m_size = new_size;
+	emit sizeChanged();
+
+	beginResetModel();
+
 	m_grid_buffer.resize(new_size * new_size);
+
+	endResetModel();
+
 	m_rows_sums.resize(new_size);
 	m_cols_sums.resize(new_size);
 }

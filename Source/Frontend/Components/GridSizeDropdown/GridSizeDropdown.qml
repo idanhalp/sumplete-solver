@@ -6,4 +6,6 @@ ComboBox {
 	width: 150
 	height: 50
 	model: [3, 4, 5, 6, 7, 8, 9]
+
+	onActivated: mainModule.resize(currentValue)
 }

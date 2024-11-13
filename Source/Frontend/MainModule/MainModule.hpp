@@ -22,6 +22,7 @@ public:
 	int size() const;
 	void setSize(int newSize);
 
+public slots:
 	auto resize(int new_size) -> void;
 
 signals:
