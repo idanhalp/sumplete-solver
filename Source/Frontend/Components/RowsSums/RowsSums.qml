@@ -7,10 +7,10 @@ ListView {
 
 	interactive: false
 	orientation: ListView.Horizontal
-	model: ["1", "2", "3", "4"]
+	model: mainModule.size
 
 	delegate: Rectangle {
-		width: root.width / root.model.length
+		width: root.width / mainModule.size
 		height: root.height
 
 		Text {

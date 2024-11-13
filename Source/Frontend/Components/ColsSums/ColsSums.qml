@@ -7,11 +7,11 @@ ListView {
 
 	interactive: false
 	orientation: ListView.Vertical
-	model: ["1", "2", "3", "4"]
+	model: mainModule.size
 
 	delegate: Rectangle {
 		width: root.width
-		height: root.height / root.model.length
+		height: root.height / mainModule.size
 		Text {
 			anchors.centerIn: parent
 			text: modelData

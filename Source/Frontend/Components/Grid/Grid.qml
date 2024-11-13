@@ -6,13 +6,14 @@ GridView {
 	id: root
 
 	required property int measurements // Length of the width and height
-	required property int size         // Number of rows and columns.
 
 	width: measurements
 	height: measurements
-	cellWidth: measurements / root.size
-	cellHeight: measurements / root.size
-	model: size * size // Number of cells.
+	cellWidth: measurements / mainModule.size
+	cellHeight: measurements / mainModule.size
+
+	model: mainModule
+
 	boundsBehavior: Flickable.StopAtBounds
 
 	// Properties for the cells.
