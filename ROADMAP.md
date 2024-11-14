@@ -6,29 +6,24 @@ This document outlines the future plans for this project.
 ## Goals
 ### General
 - [ ] Project deployment.
-- [ ] Comprehensive README file.    
+- [ ] Comprehensive README file.
 
 ### Backend
 - [X] Backend directory.
 - [X] Functional solver.
 - [X] Tested solver.
 - [X] Efficient solver.
+- [ ] Migrating tests to **Qt Test** framework.
 
 ### Frontend
 - [X] Frontend directory.
 - [X] General design.
 - [ ] Descriptive header.
 - [ ] Reactive grid.
-- [ ] Resizable grid.
+- [X] Resizable grid.
 - [ ] Interaction with the solver.
 - [ ] Displaying the solution.
+- [ ] 'Clear' button.
 
-## In progress
-### General
-- [X] Separation to *Backend* and *Frontend* directories.
-- [X] Reorganization to *Source* and *Tests* directories.
-
-### Backend
-- [X] Deprecation of `Algorithm::Version1`.
-- [ ] Documentation improvements.
-- [X] Testing unsolvable inputs.
+### Refacoring
+- [ ] Convert directory and namespace names to snake case.
