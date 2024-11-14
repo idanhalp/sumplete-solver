@@ -25,5 +25,5 @@ This document outlines the future plans for this project.
 - [ ] Displaying the solution.
 - [ ] 'Clear' button.
 
-### Refacoring
+### Refactoring
 - [ ] Convert directory and namespace names to snake case.
