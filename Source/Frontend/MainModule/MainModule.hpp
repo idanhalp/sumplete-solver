@@ -28,6 +28,7 @@ public slots:
 	auto update_grid(int index, const QString& value) -> void;
 	auto update_col_sum(int col, const QString& value) -> void;
 	auto update_row_sum(int row, const QString& value) -> void;
+	auto display_solution() -> void;
 
 signals:
 	auto size_changed() -> void;

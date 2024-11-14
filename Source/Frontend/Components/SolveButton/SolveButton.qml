@@ -15,4 +15,6 @@ Button {
 		text: "solve"
 		color: "black"
 	}
+
+	onClicked: mainModule.display_solution()
 }
