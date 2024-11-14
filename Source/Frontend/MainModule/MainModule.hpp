@@ -25,6 +25,7 @@ public:
 
 public slots:
 	auto resize(int new_size) -> void;
+	auto update_grid(int index, const QString& value) -> void;
 
 signals:
 	auto size_changed() -> void;

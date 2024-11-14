@@ -49,6 +49,11 @@ auto MainModule::resize(const int new_size) -> void
 	endResetModel();
 }
 
+auto MainModule::update_grid(const int index, const QString& value) -> void
+{
+	m_grid_buffer[index] = value;
+}
+
 auto MainModule::get_size() const -> int
 {
 	return m_size;
