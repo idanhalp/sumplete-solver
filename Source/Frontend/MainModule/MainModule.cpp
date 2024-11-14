@@ -2,6 +2,7 @@
 
 MainModule::MainModule()
 {
+	m_size = 0; // Guarantees that `m_size != new_size` when `resize` is called.
 	resize(3);
 }
 
@@ -29,8 +30,15 @@ auto MainModule::roleNames() const -> QHash<int, QByteArray>
 
 auto MainModule::resize(const int new_size) -> void
 {
-	m_size = new_size;
-	emit sizeChanged();
+	const bool size_changed = m_size != new_size;
+
+	// If the size didn't change, the grid's content must not be deleted.
+	if (!size_changed)
+	{
+		return;
+	}
+
+	setSize(new_size);
 
 	beginResetModel();
 
