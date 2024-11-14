@@ -9,6 +9,10 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
+set(WARNING_FLAGS "-Wall -Wextra")
+set(OPTIMIZATION_LEVEL -O0)
+set(CMAKE_CXX_FLAGS "${WARNING_FLAGS} ${OPTIMIZATION_LEVEL}")
+
 # Define source files with paths relative to the root
 qt_add_executable(appSumpleteSolverQt
 
