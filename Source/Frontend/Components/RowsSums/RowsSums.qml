@@ -1,6 +1,7 @@
 // pragma ComponentBehavior: Bound
 
-import QtQuick 6.5
+import QtQuick
+import QtQuick.Controls
 
 ListView {
 	id: root
@@ -13,10 +14,17 @@ ListView {
 		width: root.width / mainModule.size
 		height: root.height
 
-		Text {
+		color: "white"
+		border.color: "black"
+
+		TextField {
 			anchors.centerIn: parent
-			text: modelData
-			font.pixelSize: 35
+
+			font.pixelSize: 25
+
+			background: Rectangle {
+				color: "transparent"
+			}
 		}
 	}
 }

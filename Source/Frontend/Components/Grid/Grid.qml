@@ -1,6 +1,5 @@
-pragma ComponentBehavior: Bound
-
 import QtQuick
+import QtQuick.Controls
 
 GridView {
 	id: root
@@ -22,5 +21,15 @@ GridView {
 		height: root.cellHeight
 		color: "grey"
 		border.color: "black"
+
+		TextField {
+			anchors.centerIn: parent
+
+			font.pixelSize: 25
+
+			background: Rectangle {
+				color: "transparent"
+			}
+		}
 	}
 }

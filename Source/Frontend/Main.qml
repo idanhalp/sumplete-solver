@@ -33,7 +33,7 @@ Window {
 			leftMargin: 20
 		}
 
-		width: 50
+		width: 100
 		height: grid.height
 	}
 
