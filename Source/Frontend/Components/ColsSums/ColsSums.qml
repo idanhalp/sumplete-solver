@@ -25,6 +25,15 @@ ListView {
 			background: Rectangle {
 				color: "transparent"
 			}
+
+			onTextChanged: {
+				mainModule.update_col_sum(index, text)
+			}
+
+			validator: IntValidator {
+				bottom: -99
+				top:    +99
+			}
 		}
 	}
 }
