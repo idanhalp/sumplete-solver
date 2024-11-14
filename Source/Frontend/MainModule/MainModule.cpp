@@ -1,4 +1,5 @@
 #include "Source/Frontend/MainModule/MainModule.hpp"
+#include <algorithm>
 
 MainModule::MainModule()
 {
@@ -66,7 +67,30 @@ auto MainModule::update_row_sum(const int row, const QString& value) -> void
 
 auto MainModule::display_solution() -> void
 {
-	qDebug() << "Solve button pressed!";
+	const bool input_is_valid = check_input_validity();
+
+
+}
+
+///
+/// @brief  Checks if the input is valid.
+/// @return True iff all the cells of the grid and the
+///         rows' and columns' sums contain valid numbers.
+auto MainModule::check_input_validity() const -> bool
+{
+	const auto value_is_valid_number = [] (const QString& value) -> bool
+	{
+		bool is_valid_number;
+		value.toInt(&is_valid_number);
+
+		return is_valid_number;
+	};
+
+	const bool grid_is_valid = std::ranges::all_of(m_grid_buffer, value_is_valid_number);
+	const bool cols_sums_are_valid = std::ranges::all_of(m_cols_sums, value_is_valid_number);
+	const bool rows_sums_are_valid = std::ranges::all_of(m_rows_sums, value_is_valid_number);
+
+	return grid_is_valid && cols_sums_are_valid && rows_sums_are_valid;
 }
 
 auto MainModule::get_size() const -> int

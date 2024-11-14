@@ -40,6 +40,8 @@ private:
 
 	// QAbstractItemModel interface
 	int m_size;
+
+	auto check_input_validity() const -> bool;
 };
 
 #endif // SOURCE_FRONTEND_MAIN_MODULE_HPP
