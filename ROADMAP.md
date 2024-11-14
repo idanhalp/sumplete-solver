@@ -21,7 +21,7 @@ This document outlines the future plans for this project.
 - [ ] Descriptive header.
 - [X] Reactive grid.
 - [X] Resizable grid.
-- [ ] Interaction with the solver.
+- [X] Interaction with the solver.
 - [ ] Displaying the solution.
 - [ ] 'Clear' button.
 
