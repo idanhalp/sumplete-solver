@@ -7,12 +7,12 @@ ListView {
 	id: root
 
 	interactive: false
-	orientation: ListView.Vertical
+	orientation: ListView.Horizontal
 	model: mainModule.size
 
 	delegate: Rectangle {
-		width: root.width
-		height: root.height / mainModule.size
+		width: root.width / mainModule.size
+		height: root.height
 
 		color: "white"
 		border.color: "black"

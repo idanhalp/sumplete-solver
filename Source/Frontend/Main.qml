@@ -25,19 +25,6 @@ Window {
 	}
 
 	ColsSums {
-		id: colsSums
-
-		anchors {
-			verticalCenter: grid.verticalCenter
-			left: grid.right
-			leftMargin: 20
-		}
-
-		width: 100
-		height: grid.height
-	}
-
-	RowsSums {
 		id: rowsSums
 
 		anchors {
@@ -48,6 +35,19 @@ Window {
 
 		width: grid.width
 		height: 50
+	}
+
+	RowsSums {
+		id: colsSums
+
+		anchors {
+			verticalCenter: grid.verticalCenter
+			left: grid.right
+			leftMargin: 20
+		}
+
+		width: 100
+		height: grid.height
 	}
 
 	Row {
