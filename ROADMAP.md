@@ -19,7 +19,7 @@ This document outlines the future plans for this project.
 - [X] Frontend directory.
 - [X] General design.
 - [ ] Descriptive header.
-- [ ] Reactive grid.
+- [X] Reactive grid.
 - [X] Resizable grid.
 - [ ] Interaction with the solver.
 - [ ] Displaying the solution.
