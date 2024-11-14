@@ -8,11 +8,12 @@
 /// The main difference from the first version lays 
 /// in the pruning of dead end paths.
 ///
+/// A preprocessing stage is added:
 /// Every possible subset of each row and column is checked,
 /// and the subsets that sum to the target are inserted to a trie.
 /// 
-/// Thus after every substitution we are able to check if we have
-/// reached a dead end, and continue or backtrack accordingly.
+/// Using the tries, we are able to check after every substitution
+/// if we have reached a dead end, and continue or backtrack accordingly.
 ///
 /// This version is much superior to the first one, and is capable
 /// of solving master-level 9x9 grids immediately.
