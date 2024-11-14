@@ -1,6 +1,7 @@
 #ifndef SOURCE_FRONTEND_MAIN_MODULE_HPP
 #define SOURCE_FRONTEND_MAIN_MODULE_HPP
 
+#include "Source/Backend/Parameters.hpp"
 #include <QAbstractListModel>
 #include <QList>
 #include <QtQml/qqml.h>
@@ -42,6 +43,7 @@ private:
 	int m_size;
 
 	auto check_input_validity() const -> bool;
+	auto convert_input_format() const -> Params::Input;
 };
 
 #endif // SOURCE_FRONTEND_MAIN_MODULE_HPP
