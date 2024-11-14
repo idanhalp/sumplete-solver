@@ -61,7 +61,7 @@ auto MainModule::update_col_sum(const int col, const QString& value) -> void
 
 auto MainModule::update_row_sum(const int row, const QString& value) -> void
 {
-
+	m_rows_sums[row] = value;
 }
 
 auto MainModule::display_solution() -> void
