@@ -9,7 +9,7 @@ class MainModule : public QAbstractListModel
 {
 	Q_OBJECT
 	QML_ELEMENT
-	Q_PROPERTY(int size READ size  WRITE setSize  NOTIFY sizeChanged FINAL)
+	Q_PROPERTY(int size READ get_size  WRITE set_size  NOTIFY size_changed FINAL)
 
 public:
 	MainModule();
@@ -20,14 +20,14 @@ public:
 	auto removeRows(int row, int count, const QModelIndex &parent) -> bool override;
 	auto roleNames() const -> QHash<int, QByteArray> override;
 
-	auto size() const -> int;
-	auto setSize(int new_size) -> void;
+	auto get_size() const -> int;
+	auto set_size(int new_size) -> void;
 
 public slots:
 	auto resize(int new_size) -> void;
 
 signals:
-	auto sizeChanged() -> void;
+	auto size_changed() -> void;
 
 private:
 	QList<QString> m_grid_buffer; // Flattened grid.

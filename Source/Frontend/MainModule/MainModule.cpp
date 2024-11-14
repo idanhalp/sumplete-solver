@@ -38,7 +38,7 @@ auto MainModule::resize(const int new_size) -> void
 		return;
 	}
 
-	setSize(new_size);
+	set_size(new_size);
 
 	beginResetModel();
 
@@ -49,16 +49,16 @@ auto MainModule::resize(const int new_size) -> void
 	endResetModel();
 }
 
-auto MainModule::size() const -> int
+auto MainModule::get_size() const -> int
 {
 	return m_size;
 }
 
-auto MainModule::setSize(int new_size) -> void
+auto MainModule::set_size(int new_size) -> void
 {
 	if (m_size == new_size)
 		return;
 
 	m_size = new_size;
-	emit sizeChanged();
+	emit size_changed();
 }
