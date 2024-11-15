@@ -97,5 +97,3 @@ auto ValidityChecksTests::test_5() -> void
 
 	QVERIFY(check_is_correct);
 }
-
-QTEST_MAIN(ValidityChecksTests);
