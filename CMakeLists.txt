@@ -58,15 +58,15 @@ qt_add_executable(Test
     ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.hpp
 
     # Test files.
-    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Algorithm.cpp
-    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Algorithm.hpp
-    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/Trie/Trie.cpp
-    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/Trie/Trie.hpp
-    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
-    ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
+    ${CMAKE_SOURCE_DIR}/Tests/Backend/Algorithm/Algorithm.cpp
+    ${CMAKE_SOURCE_DIR}/Tests/Backend/Algorithm/Algorithm.hpp
+    ${CMAKE_SOURCE_DIR}/Tests/Backend/Algorithm/Version2/Trie/Trie.cpp
+    ${CMAKE_SOURCE_DIR}/Tests/Backend/Algorithm/Version2/Trie/Trie.hpp
+    ${CMAKE_SOURCE_DIR}/Tests/Backend/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
+    ${CMAKE_SOURCE_DIR}/Tests/Backend/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
     ${CMAKE_SOURCE_DIR}/Tests/Main.cpp
-    ${CMAKE_SOURCE_DIR}/Tests/ValidityChecks/ValidityChecks.cpp
-    ${CMAKE_SOURCE_DIR}/Tests/ValidityChecks/ValidityChecks.hpp
+    ${CMAKE_SOURCE_DIR}/Tests/Backend/ValidityChecks/ValidityChecks.cpp
+    ${CMAKE_SOURCE_DIR}/Tests/Backend/ValidityChecks/ValidityChecks.hpp
 )
 
 target_include_directories(SumpleteSolverApp PRIVATE

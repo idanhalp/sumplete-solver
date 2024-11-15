@@ -1,6 +1,6 @@
 #include "Source/Backend/Algorithm/Version2/Algorithm.hpp"
 #include "Source/Backend/Parameters.hpp"
-#include "Tests/Algorithm/Algorithm.hpp"
+#include "Tests/Backend/Algorithm/Algorithm.hpp"
 #include <vector>
 
 auto AlgorithmTests::check_output_validity(const Params::Input& input, const Params::output_t& output) -> bool

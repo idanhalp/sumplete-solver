@@ -1,5 +1,5 @@
 #include "Source/Backend/Algorithm/Version2/Utils/Trie/Trie.hpp"
-#include "Tests/Algorithm/Version2/Trie/Trie.hpp"
+#include "Tests/Backend/Algorithm/Version2/Trie/Trie.hpp"
 
 auto TrieTests::initTestCase() -> void
 {
