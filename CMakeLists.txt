@@ -64,7 +64,6 @@ qt_add_executable(Test
     ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/Trie/Trie.hpp
     ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
     ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
-    ${CMAKE_SOURCE_DIR}/Tests/Main.cpp
     ${CMAKE_SOURCE_DIR}/Tests/ValidityChecks/ValidityChecks.cpp
     ${CMAKE_SOURCE_DIR}/Tests/ValidityChecks/ValidityChecks.hpp
 )
