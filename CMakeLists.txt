@@ -110,6 +110,10 @@ target_link_libraries(SumpleteSolverApp
     PRIVATE Qt6::Quick Qt6::qtquickcontrols2plugin
 )
 
+target_link_libraries(Test
+    PRIVATE Qt6::Test
+)
+
 include(GNUInstallDirs)
 install(TARGETS SumpleteSolverApp Test
     BUNDLE DESTINATION .
