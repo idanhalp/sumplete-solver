@@ -1,29 +1,47 @@
 #include "Source/Backend/Algorithm/Version2/Utils/Trie/Trie.hpp"
 #include "Tests/Algorithm/Version2/Trie/Trie.hpp"
-#include <cassert>
 
-auto Tests::Version2::run_trie_tests() -> void
+auto TrieTests::initTestCase() -> void
 {
-	const std::vector sequence_1{true, true, false, false, true};
-	const std::vector sequence_2{false, false, true, true, true};
-	const std::vector sequences{sequence_1, sequence_2};
-	const Algorithm::Version2::Utils::Trie trie(sequences);
+	sequence_1 = std::vector<bool>{true, true, false, false, true};
+	sequence_2 = std::vector<bool>{false, false, true, true, true};
 
-	const std::vector subsequence_1 = sequence_1;
-	assert(trie.check_if_prefix_exists(subsequence_1));
+	trie.insert(sequence_1);
+	trie.insert(sequence_2);
+}
 
-	const std::vector subsequence_2 = sequence_2;
-	assert(trie.check_if_prefix_exists(subsequence_2));
+auto TrieTests::test_1() const -> void
+{
+	const std::vector subsequence = sequence_1;
+	QVERIFY(trie.check_if_prefix_exists(subsequence));
+}
 
-	const std::vector subsequence_3{true, true};
-	assert(trie.check_if_prefix_exists(subsequence_3));
-	
-	const std::vector subsequence_4{false, false};
-	assert(trie.check_if_prefix_exists(subsequence_4));
-	
-	const std::vector subsequence_5{true, false};
-	assert(!trie.check_if_prefix_exists(subsequence_5));
-	
-	const std::vector subsequence_6{false, true};
-	assert(!trie.check_if_prefix_exists(subsequence_6));
+auto TrieTests::test_2() const -> void
+{
+	const std::vector subsequence = sequence_2;
+	QVERIFY(trie.check_if_prefix_exists(subsequence));
+}
+
+auto TrieTests::test_3() const -> void
+{
+	const std::vector subsequence{true, true};
+	QVERIFY(trie.check_if_prefix_exists(subsequence));
+}
+
+auto TrieTests::test_4() const -> void
+{
+	const std::vector subsequence{false, false};
+	QVERIFY(trie.check_if_prefix_exists(subsequence));
+}
+
+auto TrieTests::test_5() const -> void
+{
+	const std::vector subsequence{true, false};
+	QVERIFY(!trie.check_if_prefix_exists(subsequence));
+}
+
+auto TrieTests::test_6() const -> void
+{
+	const std::vector subsequence{false, true};
+	QVERIFY(!trie.check_if_prefix_exists(subsequence));
 }
