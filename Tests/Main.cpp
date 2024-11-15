@@ -1,5 +1,6 @@
 #include "Tests/Algorithm/Algorithm.hpp"
 #include "Tests/Algorithm/Version2/Trie/Trie.hpp"
+#include "Tests/Algorithm/Version2/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp"
 #include "Tests/ValidityChecks/ValidityChecks.hpp"
 #include <QtTest>
 
@@ -10,6 +11,7 @@ auto main(const int num_of_arguments, char* arguments[]) -> int
 	const int status = 0
 		| run(AlgorithmTests())
 		| run(TrieTests())
+		| run(ValidSubsetsGenerationTests())
 		| run(ValidityChecksTests());
 
 	return status;
