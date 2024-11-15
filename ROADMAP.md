@@ -13,7 +13,7 @@ This document outlines the future plans for this project.
 - [X] Functional solver.
 - [X] Tested solver.
 - [X] Efficient solver.
-- [ ] Migrating tests to **Qt Test** framework.
+- [X] Migrating tests to **Qt Test** framework.
 
 ### Frontend
 - [X] Frontend directory.
