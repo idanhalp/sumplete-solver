@@ -42,8 +42,22 @@ qt_add_executable(appSumpleteSolverQt
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Main.cpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/MainModule/MainModule.cpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/MainModule/MainModule.hpp
+)
 
-    # Tests files
+qt_add_executable(Test
+    # Backend files.
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version1/Algorithm.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version1/Algorithm.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Algorithm.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Algorithm.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/Trie/Trie.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/Trie/Trie.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.cpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.hpp
+
+    # Test files.
     ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Algorithm.cpp
     ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Algorithm.hpp
     ${CMAKE_SOURCE_DIR}/Tests/Algorithm/Version2/Trie/Trie.cpp
@@ -58,6 +72,10 @@ qt_add_executable(appSumpleteSolverQt
 target_include_directories(appSumpleteSolverQt PRIVATE
     ${CMAKE_SOURCE_DIR} # Addresses should be relative to the root.
     ${CMAKE_SOURCE_DIR}/Source/Frontend/MainModule
+)
+
+target_include_directories(Test PRIVATE
+    ${CMAKE_SOURCE_DIR}
 )
 
 qt_add_qml_module(appSumpleteSolverQt
@@ -80,7 +98,7 @@ qt_add_qml_module(appSumpleteSolverQt
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
-set_target_properties(appSumpleteSolverQt PROPERTIES
+set_target_properties(appSumpleteSolverQt Test PROPERTIES
 #    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appSumpleteSolverQt
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -93,7 +111,7 @@ target_link_libraries(appSumpleteSolverQt
 )
 
 include(GNUInstallDirs)
-install(TARGETS appSumpleteSolverQt
+install(TARGETS appSumpleteSolverQt Test
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

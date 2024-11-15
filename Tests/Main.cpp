@@ -35,9 +35,9 @@ auto run_all_tests() -> void
 	std::println("All tests passed!");
 }
 
-// auto main() -> int
-// {
-// 	run_all_tests();
+auto main() -> int
+{
+	run_all_tests();
 
-// 	return EXIT_SUCCESS;
-// }
+	return EXIT_SUCCESS;
+}
