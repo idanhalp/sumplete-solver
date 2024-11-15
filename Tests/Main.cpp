@@ -4,12 +4,11 @@
 
 auto main(const int num_of_arguments, char* arguments[]) -> int
 {
-	AlgorithmTests algorithm_tests;
-	ValidityChecksTests validity_checks_tests;
+	const auto run = [&] <typename TEST> (TEST test) -> int { return QTest::qExec(&test, num_of_arguments, arguments); };
 
 	const int status = 0
-		| QTest::qExec(&algorithm_tests, num_of_arguments, arguments)
-		| QTest::qExec(&validity_checks_tests, num_of_arguments, arguments);
+		| run(AlgorithmTests())
+		| run(ValidityChecksTests());
 
 	return status;
 }
