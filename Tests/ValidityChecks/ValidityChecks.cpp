@@ -1,7 +1,6 @@
 #include "Source/Backend/Parameters.hpp"
 #include "Source/Backend/ValidityChecks/ValidityChecks.hpp"
 #include "Tests/ValidityChecks/ValidityChecks.hpp"
-#include <cassert>
 #include <optional>
 #include <vector>
 
@@ -96,7 +95,7 @@ auto ValidityChecksTests::test_5() -> void
 	const std::optional<Params::SolutionError> result = ValidityChecks::check_input(input);
 	const bool check_is_correct = !result.has_value();
 
-	assert(check_is_correct);
+	QVERIFY(check_is_correct);
 }
 
 QTEST_MAIN(ValidityChecksTests);
