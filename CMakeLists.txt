@@ -14,7 +14,7 @@ set(OPTIMIZATION_LEVEL -O0)
 set(CMAKE_CXX_FLAGS "${WARNING_FLAGS} ${OPTIMIZATION_LEVEL}")
 
 # Define source files with paths relative to the root
-qt_add_executable(appSumpleteSolverQt
+qt_add_executable(SumpleteSolverApp
 
     # Backend files
     ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version1/Algorithm.cpp
@@ -69,7 +69,7 @@ qt_add_executable(Test
     ${CMAKE_SOURCE_DIR}/Tests/ValidityChecks/ValidityChecks.hpp
 )
 
-target_include_directories(appSumpleteSolverQt PRIVATE
+target_include_directories(SumpleteSolverApp PRIVATE
     ${CMAKE_SOURCE_DIR} # Addresses should be relative to the root.
     ${CMAKE_SOURCE_DIR}/Source/Frontend/MainModule
 )
@@ -78,7 +78,7 @@ target_include_directories(Test PRIVATE
     ${CMAKE_SOURCE_DIR}
 )
 
-qt_add_qml_module(appSumpleteSolverQt
+qt_add_qml_module(SumpleteSolverApp
     URI SumpleteSolverQt
     VERSION 1.0
     QML_FILES
@@ -98,20 +98,20 @@ qt_add_qml_module(appSumpleteSolverQt
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
-set_target_properties(appSumpleteSolverQt Test PROPERTIES
-#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appSumpleteSolverQt
+set_target_properties(SumpleteSolverApp Test PROPERTIES
+#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.SumpleteSolverApp
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(appSumpleteSolverQt
+target_link_libraries(SumpleteSolverApp
     PRIVATE Qt6::Quick Qt6::qtquickcontrols2plugin
 )
 
 include(GNUInstallDirs)
-install(TARGETS appSumpleteSolverQt Test
+install(TARGETS SumpleteSolverApp Test
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
