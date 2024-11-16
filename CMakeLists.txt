@@ -13,10 +13,11 @@ set(WARNING_FLAGS "-Wall -Wextra")
 set(OPTIMIZATION_LEVEL -O0)
 set(CMAKE_CXX_FLAGS "${WARNING_FLAGS} ${OPTIMIZATION_LEVEL}")
 
-# Define source files with paths relative to the root
-qt_add_executable(SumpleteSolverApp
+# Project files.
+# Files' paths mst relative to the root.
 
-    # Backend files
+set(BACKEND_FILES
+
     ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version1/Algorithm.cpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version1/Algorithm.hpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Algorithm.cpp
@@ -28,28 +29,27 @@ qt_add_executable(SumpleteSolverApp
     ${CMAKE_SOURCE_DIR}/Source/Backend/Parameters.hpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.cpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.hpp
+)
 
-    # Frontend files
+set(FRONTEND_FILES
+
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Main.cpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/MainModule/MainModule.cpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/MainModule/MainModule.hpp
 )
 
-qt_add_executable(Test
-    # Backend files.
-    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version1/Algorithm.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version1/Algorithm.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Algorithm.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Algorithm.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/Trie/Trie.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/Trie/Trie.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend/Parameters.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.hpp
+set(QML_FILES
 
-    # Test files.
+    Source/Frontend/Components/Grid.qml
+    Source/Frontend/Components/GridSizeDropdown.qml
+    Source/Frontend/Components/ColsSums.qml
+    Source/Frontend/Components/RowsSums.qml
+    Source/Frontend/Components/SolveButton.qml
+    Source/Frontend/Main.qml
+)
+
+set(TEST_FILES
+
     ${CMAKE_SOURCE_DIR}/Tests/Backend/Algorithm/Algorithm.cpp
     ${CMAKE_SOURCE_DIR}/Tests/Backend/Algorithm/Algorithm.hpp
     ${CMAKE_SOURCE_DIR}/Tests/Backend/Algorithm/Version2/Trie/Trie.cpp
@@ -59,6 +59,18 @@ qt_add_executable(Test
     ${CMAKE_SOURCE_DIR}/Tests/Main.cpp
     ${CMAKE_SOURCE_DIR}/Tests/Backend/ValidityChecks/ValidityChecks.cpp
     ${CMAKE_SOURCE_DIR}/Tests/Backend/ValidityChecks/ValidityChecks.hpp
+)
+
+qt_add_executable(SumpleteSolverApp
+
+    ${BACKEND_FILES}
+    ${FRONTEND_FILES}
+)
+
+qt_add_executable(Test
+
+    ${BACKEND_FILES}
+    ${TEST_FILES}
 )
 
 target_include_directories(SumpleteSolverApp PRIVATE
@@ -74,12 +86,7 @@ qt_add_qml_module(SumpleteSolverApp
     URI SumpleteSolverQt
     VERSION 1.0
     QML_FILES
-	Source/Frontend/Components/Grid.qml
-	Source/Frontend/Components/GridSizeDropdown.qml
-	Source/Frontend/Components/ColsSums.qml
-	Source/Frontend/Components/RowsSums.qml
-	Source/Frontend/Components/SolveButton.qml
-	Source/Frontend/Main.qml
+	${QML_FILES}
 
     # C++ files that should be converted to QML using the QML_ELEMENT macro.
     SOURCES
