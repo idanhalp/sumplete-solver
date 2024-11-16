@@ -21,6 +21,16 @@ Window {
 		measurements: 600
 	}
 
+	Description {
+		id: description
+
+		anchors {
+			horizontalCenter: grid.horizontalCenter
+			bottom: grid.top
+			bottomMargin: 30
+		}
+	}
+
 	ColsSums {
 		id: rowsSums
 

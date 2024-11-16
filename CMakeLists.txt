@@ -42,6 +42,7 @@ set(QML_FILES
 
     Source/Frontend/Components/ClearButton.qml
     Source/Frontend/Components/ColsSums.qml
+    Source/Frontend/Components/Description.qml
     Source/Frontend/Components/Grid.qml
     Source/Frontend/Components/GridSizeDropdown.qml
     Source/Frontend/Components/RowsSums.qml
