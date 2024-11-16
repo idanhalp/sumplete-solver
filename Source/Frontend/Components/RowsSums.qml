@@ -14,7 +14,7 @@ ListView {
 		width: root.width
 		height: root.height / mainModule.size
 
-		color: "white"
+		color: "#D3D3D3" // Light grey
 		border.color: "black"
 
 		TextField {

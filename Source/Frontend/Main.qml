@@ -8,6 +8,7 @@ Window {
 	title: qsTr("Sumplete solver")
 	width: 640
 	height: 480
+	color: "#63666A"
 	visible: true
 
 	MainModule {

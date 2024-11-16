@@ -28,17 +28,20 @@ GridView {
 
 			switch (cellStatus) {
 				case Params.CellStatus.KEEP:
-					return "green"
+					const lightGreen = "#99EE99"
+					return lightGreen
 
 				case Params.CellStatus.DELETE:
-					return "red"
+					const lightRed = "#FF7F7F"
+					return lightRed
 
 				case Params.CellStatus.UNKNOWN:
-					return "grey"
+					const lightGrey = "#D3D3D3"
+					return lightGrey
 
 				// After resizing there is a moment when `cell_statuses`'s
 				// size might be incompatible with the grid's size.
-				// This is need to prevent undefined behavior.
+				// This is needed to prevent undefined behavior.
 				default:
 					return "black"
 			}
