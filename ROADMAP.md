@@ -22,7 +22,7 @@ This document outlines the future plans for this project.
 - [X] Reactive grid.
 - [X] Resizable grid.
 - [X] Interaction with the solver.
-- [ ] Displaying the solution.
+- [X] Displaying the solution.
 - [ ] 'Clear' button.
 
 ### Refactoring
