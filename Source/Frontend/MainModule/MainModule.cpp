@@ -48,13 +48,15 @@ auto MainModule::resize(const int new_size) -> void
 
 	beginResetModel();
 
-	const int num_of_cells = new_size * new_size;
+	m_grid_buffer.clear();
+	m_rows_sums.clear();
+	m_cols_sums.clear();
 
-	m_grid_buffer.resize(num_of_cells);
-	m_rows_sums.resize(new_size);
-	m_cols_sums.resize(new_size);
+	m_grid_buffer.fill("", new_size * new_size);
+	m_rows_sums.fill("", new_size);
+	m_cols_sums.fill("", new_size);
 
-	set_cell_statuses(QVariantList(num_of_cells, QVariant::fromValue(Params::CellStatus::UNKNOWN)));
+	set_cell_statuses(QVariantList(new_size * new_size, QVariant::fromValue(Params::CellStatus::UNKNOWN)));
 
 	endResetModel();
 }
