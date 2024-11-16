@@ -1,11 +1,14 @@
 #ifndef SOURCE_PARAMETERS_HPP
 #define SOURCE_PARAMETERS_HPP
 
+#include <QObject>
 #include <expected>
 #include <vector>
 
 namespace Params
 {
+	Q_NAMESPACE
+
 	// Indication whether a cell is included in the sum or omitted from it.
 	enum class CellStatus
 	{
@@ -32,6 +35,8 @@ namespace Params
 		std::vector<int> col_sums;
 		input_grid_t grid;
 	};
+
+	Q_ENUM_NS(CellStatus); // Register the enum in meta object data.
 }
 
 #endif // SOURCE_PARAMETERS_HPP
