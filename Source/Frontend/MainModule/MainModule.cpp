@@ -64,7 +64,7 @@ auto MainModule::resize(const int new_size) -> void
 	m_rows_sums.fill("", new_size);
 	m_cols_sums.fill("", new_size);
 
-	set_cell_statuses(QVariantList(new_size * new_size, QVariant::fromValue(Params::CellStatus::UNKNOWN)));
+	reset_cell_statuses();
 
 	endResetModel();
 }
@@ -72,16 +72,19 @@ auto MainModule::resize(const int new_size) -> void
 auto MainModule::update_grid(const int index, const QString& value) -> void
 {
 	m_grid_buffer[index] = value;
+	reset_cell_statuses();
 }
 
 auto MainModule::update_col_sum(const int col, const QString& value) -> void
 {
 	m_cols_sums[col] = value;
+	reset_cell_statuses();
 }
 
 auto MainModule::update_row_sum(const int row, const QString& value) -> void
 {
 	m_rows_sums[row] = value;
+	reset_cell_statuses();
 }
 
 auto MainModule::display_solution() -> void
@@ -170,6 +173,11 @@ auto MainModule::convert_solution_format(const Params::output_grid_t& solution) 
 	}
 
 	return converted_output;
+}
+
+auto MainModule::reset_cell_statuses() -> void
+{
+	set_cell_statuses(QVariantList(m_grid_buffer.size(), QVariant::fromValue(Params::CellStatus::UNKNOWN)));
 }
 
 auto MainModule::get_size() const -> int

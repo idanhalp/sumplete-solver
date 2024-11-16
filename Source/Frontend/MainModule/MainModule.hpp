@@ -53,6 +53,7 @@ private:
 
 	auto check_input_validity() const -> bool;
 	auto convert_input_format() const -> Params::Input;
+	auto reset_cell_statuses() -> void;
 	static auto convert_solution_format(const Params::output_grid_t& solution) -> QVariantList;
 };
 
