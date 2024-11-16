@@ -23,7 +23,7 @@ This document outlines the future plans for this project.
 - [X] Resizable grid.
 - [X] Interaction with the solver.
 - [X] Displaying the solution.
-- [ ] 'Clear' button.
+- [X] 'Clear' button.
 
 ### Refactoring
 - [ ] Convert directory and namespace names to snake case.
