@@ -3,6 +3,7 @@
 #include <QVariant>
 #include <algorithm>
 #include <ranges>
+#include <span>
 #include <vector>
 
 MainModule::MainModule()
@@ -47,12 +48,13 @@ auto MainModule::resize(const int new_size) -> void
 
 	beginResetModel();
 
-	const int numOfCells = new_size * new_size;
+	const int num_of_cells = new_size * new_size;
 
-	m_grid_buffer.resize(numOfCells);
-	m_cell_statuses.resize(numOfCells, QVariant::fromValue(Params::CellStatus::UNKNOWN));
+	m_grid_buffer.resize(num_of_cells);
 	m_rows_sums.resize(new_size);
 	m_cols_sums.resize(new_size);
+
+	set_cell_statuses(QVariantList(num_of_cells, QVariant::fromValue(Params::CellStatus::UNKNOWN)));
 
 	endResetModel();
 }
@@ -85,6 +87,16 @@ auto MainModule::display_solution() -> void
 	const Params::Input input = convert_input_format();
 	const Params::output_t solution = Algorithm::Version2::solve(input);
 	const bool solution_is_found = solution.has_value();
+
+	if (!solution_is_found)
+	{
+		// TODO: handle unsolvable grid.
+		return;
+	}
+
+	// This call emits a signal that causes the cell to change colors.
+	QVariantList converted_solution = convert_solution_format(solution.value());
+	set_cell_statuses(converted_solution);
 }
 
 /// @brief  Checks if the input is valid.
@@ -133,6 +145,21 @@ auto MainModule::convert_input_format() const -> Params::Input
 	const Params::Input converted_input = {.row_sums = rows_sums, .col_sums = cols_sums, .grid = grid};
 
 	return converted_input;
+}
+
+auto MainModule::convert_solution_format(const Params::output_grid_t& solution) -> QVariantList
+{
+	QVariantList converted_output;
+
+	for (std::span<const Params::CellStatus> row : solution)
+	{
+		for (const Params::CellStatus status : row)
+		{
+			converted_output.push_back(QVariant::fromValue(status));
+		}
+	}
+
+	return converted_output;
 }
 
 auto MainModule::get_size() const -> int

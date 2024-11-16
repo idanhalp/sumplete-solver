@@ -12,8 +12,6 @@ class MainModule : public QAbstractListModel
 	Q_OBJECT
 	QML_ELEMENT
 
-	Q_ENUM(Params::CellStatus);
-
 	Q_PROPERTY(int size READ get_size  WRITE set_size  NOTIFY size_changed FINAL)
 	Q_PROPERTY(QVariantList cell_statuses READ get_cell_statuses  WRITE set_cell_statuses  NOTIFY cell_statuses_changed FINAL)
 
@@ -54,6 +52,7 @@ private:
 
 	auto check_input_validity() const -> bool;
 	auto convert_input_format() const -> Params::Input;
+	static auto convert_solution_format(const Params::output_grid_t& solution) -> QVariantList;
 };
 
 #endif // SOURCE_FRONTEND_MAIN_MODULE_HPP

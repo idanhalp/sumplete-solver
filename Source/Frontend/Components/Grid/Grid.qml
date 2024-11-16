@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import Parameters
 
 GridView {
 	id: root
@@ -19,8 +20,23 @@ GridView {
 	delegate: Rectangle {
 		width: root.cellWidth
 		height: root.cellHeight
-		color: "grey"
+
 		border.color: "black"
+
+		color: {
+			const cellStatus = mainModule.cell_statuses[index]
+
+			switch (cellStatus) {
+				case Params.CellStatus.KEEP:
+					return "green"
+
+				case Params.CellStatus.DELETE:
+					return "red"
+
+				case Params.CellStatus.UNKNOWN:
+					return "grey"
+			}
+		}
 
 		TextField {
 			anchors.centerIn: parent
