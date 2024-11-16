@@ -1,5 +1,6 @@
 #include "Source/Backend/Algorithm/Version2/Algorithm.hpp"
 #include "Source/Frontend/MainModule/MainModule.hpp"
+#include <QVariant>
 #include <algorithm>
 #include <ranges>
 #include <vector>
@@ -46,7 +47,10 @@ auto MainModule::resize(const int new_size) -> void
 
 	beginResetModel();
 
-	m_grid_buffer.resize(new_size * new_size);
+	const int numOfCells = new_size * new_size;
+
+	m_grid_buffer.resize(numOfCells);
+	m_cell_statuses.resize(numOfCells, QVariant::fromValue(Params::CellStatus::UNKNOWN));
 	m_rows_sums.resize(new_size);
 	m_cols_sums.resize(new_size);
 
