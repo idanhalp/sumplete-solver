@@ -1,10 +1,6 @@
 import QtQuick
 import SumpleteSolverQt
-import "Components/ColsSums"
-import "Components/Grid"
-import "Components/GridSizeDropdown"
-import "Components/RowsSums"
-import "Components/SolveButton"
+import "Components"
 
 Window {
 	id: root

@@ -30,16 +30,6 @@ qt_add_executable(SumpleteSolverApp
     ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.hpp
 
     # Frontend files
-    ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/Grid/Grid.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/Grid/Grid.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/GridSizeDropdown/GridSizeDropdown.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/GridSizeDropdown/GridSizeDropdown.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/ColsSums/ColsSums.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/ColsSums/ColsSums.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/RowsSums/RowsSums.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/RowsSums/RowsSums.hpp
-    ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/SolveButton/SolveButton.cpp
-    ${CMAKE_SOURCE_DIR}/Source/Frontend/Components/SolveButton/SolveButton.hpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/Main.cpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/MainModule/MainModule.cpp
     ${CMAKE_SOURCE_DIR}/Source/Frontend/MainModule/MainModule.hpp
@@ -84,11 +74,11 @@ qt_add_qml_module(SumpleteSolverApp
     URI SumpleteSolverQt
     VERSION 1.0
     QML_FILES
-	Source/Frontend/Components/Grid/Grid.qml
-	Source/Frontend/Components/GridSizeDropdown/GridSizeDropdown.qml
-	Source/Frontend/Components/ColsSums/ColsSums.qml
-	Source/Frontend/Components/RowsSums/RowsSums.qml
-	Source/Frontend/Components/SolveButton/SolveButton.qml
+	Source/Frontend/Components/Grid.qml
+	Source/Frontend/Components/GridSizeDropdown.qml
+	Source/Frontend/Components/ColsSums.qml
+	Source/Frontend/Components/RowsSums.qml
+	Source/Frontend/Components/SolveButton.qml
 	Source/Frontend/Main.qml
 
     # C++ files that should be converted to QML using the QML_ELEMENT macro.
