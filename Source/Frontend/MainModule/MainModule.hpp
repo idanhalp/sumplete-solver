@@ -31,6 +31,7 @@ public:
 	auto set_cell_statuses(const QVariantList& new_cell_statuses) -> void;
 
 public slots:
+	auto clear() -> void;
 	auto resize(int new_size) -> void;
 	auto update_grid(int index, const QString& value) -> void;
 	auto update_col_sum(int col, const QString& value) -> void;

@@ -64,5 +64,9 @@ Window {
 		SolveButton {
 			id: solveButton
 		}
+
+		ClearButton {
+			id: clearButton
+		}
 	}
 }

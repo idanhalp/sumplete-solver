@@ -34,6 +34,14 @@ auto MainModule::roleNames() const -> QHash<int, QByteArray>
 	return {};
 }
 
+auto MainModule::clear() -> void
+{
+	const int original_size = m_size;
+
+	resize(0);
+	resize(original_size);
+}
+
 auto MainModule::resize(const int new_size) -> void
 {
 	const bool size_changed = m_size != new_size;
