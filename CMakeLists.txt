@@ -25,6 +25,7 @@ qt_add_executable(SumpleteSolverApp
     ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/Trie/Trie.hpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Parameters.hpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.cpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.hpp
 
@@ -54,6 +55,7 @@ qt_add_executable(Test
     ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/Trie/Trie.hpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.cpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/Algorithm/Version2/Utils/ValidSubsetsGeneration/ValidSubsetsGeneration.hpp
+    ${CMAKE_SOURCE_DIR}/Source/Backend/Parameters.hpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.cpp
     ${CMAKE_SOURCE_DIR}/Source/Backend/ValidityChecks/ValidityChecks.hpp
 
