@@ -35,6 +35,12 @@ GridView {
 
 				case Params.CellStatus.UNKNOWN:
 					return "grey"
+
+				// After resizing there is a moment when `cell_statuses`'s
+				// size might be incompatible with the grid's size.
+				// This is need to prevent undefined behavior.
+				default:
+					return "black"
 			}
 		}
 
