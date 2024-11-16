@@ -144,3 +144,19 @@ auto MainModule::set_size(int new_size) -> void
 	m_size = new_size;
 	emit size_changed();
 }
+
+auto MainModule::get_cell_statuses() const -> QVariantList
+{
+	return m_cell_statuses;
+}
+
+auto MainModule::set_cell_statuses(const QVariantList& new_cell_statuses) -> void
+{
+	if (m_cell_statuses == new_cell_statuses)
+	{
+		return;
+	}
+
+	m_cell_statuses = new_cell_statuses;
+	emit cell_statuses_changed();
+}

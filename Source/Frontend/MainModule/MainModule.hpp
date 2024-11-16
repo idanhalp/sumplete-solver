@@ -4,13 +4,18 @@
 #include "Source/Backend/Parameters.hpp"
 #include <QAbstractListModel>
 #include <QList>
+#include <QVariantList>
 #include <QtQml/qqml.h>
 
 class MainModule : public QAbstractListModel
 {
 	Q_OBJECT
 	QML_ELEMENT
+
+	Q_ENUM(Params::CellStatus);
+
 	Q_PROPERTY(int size READ get_size  WRITE set_size  NOTIFY size_changed FINAL)
+	Q_PROPERTY(QVariantList cell_statuses READ get_cell_statuses  WRITE set_cell_statuses  NOTIFY cell_statuses_changed FINAL)
 
 public:
 	MainModule();
@@ -24,6 +29,9 @@ public:
 	auto get_size() const -> int;
 	auto set_size(int new_size) -> void;
 
+	auto get_cell_statuses() const -> QVariantList;
+	auto set_cell_statuses(const QVariantList& new_cell_statuses) -> void;
+
 public slots:
 	auto resize(int new_size) -> void;
 	auto update_grid(int index, const QString& value) -> void;
@@ -33,6 +41,7 @@ public slots:
 
 signals:
 	auto size_changed() -> void;
+	auto cell_statuses_changed() -> void;
 
 private:
 	QList<QString> m_grid_buffer; // Flattened grid.
@@ -41,6 +50,7 @@ private:
 
 	// QAbstractItemModel interface
 	int m_size;
+	QVariantList m_cell_statuses;
 
 	auto check_input_validity() const -> bool;
 	auto convert_input_format() const -> Params::Input;
