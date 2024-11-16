@@ -9,6 +9,8 @@ namespace Params
 {
 	Q_NAMESPACE
 
+	const int DEFAULT_GRID_SIZE = 3;
+
 	// Indication whether a cell is included in the sum or omitted from it.
 	enum class CellStatus
 	{

@@ -9,7 +9,7 @@
 MainModule::MainModule()
 {
 	m_size = 0; // Guarantees that `m_size != new_size` when `resize` is called.
-	resize(3);
+	resize(Params::DEFAULT_GRID_SIZE);
 }
 
 auto MainModule::rowCount(const QModelIndex& parent) const -> int
