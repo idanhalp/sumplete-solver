@@ -18,7 +18,7 @@ This document outlines the future plans for this project.
 ### Frontend
 - [X] Frontend directory.
 - [X] General design.
-- [ ] Descriptive header.
+- [X] Descriptive header.
 - [X] Reactive grid.
 - [X] Resizable grid.
 - [X] Interaction with the solver.
