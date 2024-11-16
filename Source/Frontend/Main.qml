@@ -27,7 +27,7 @@ Window {
 		anchors {
 			horizontalCenter: grid.horizontalCenter
 			bottom: grid.top
-			bottomMargin: 30
+			bottomMargin: 40
 		}
 	}
 
