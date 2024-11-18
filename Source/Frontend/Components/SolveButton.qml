@@ -16,5 +16,12 @@ Button {
 		color: "black"
 	}
 
-	onClicked: mainModule.display_solution()
+	onClicked: {
+		const solutionFound = mainModule.display_solution()
+
+		if (!solutionFound)
+		{
+			noSolutionPopup.open()
+		}
+	}
 }
