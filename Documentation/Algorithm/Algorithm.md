@@ -25,17 +25,17 @@ Identifying such dead ends earlier saves a lot of redundant work. This is also k
 
 The better the pruning is, the faster the algorithm.
 
-## Version I
+## Version I (Deprecated)
 ### Algorithm
-We scan the grid in row-major order, looking for unassigned cell.
+We scan the grid in row-major order, looking for an unassigned cell.
 
-If no such cell exists, we found a solution.
+If no such cell exists, all cells are filled and we found a solution.
 
 Otherwise we try including the cell.
 If we reached the end of some row (namely `col == n - 1`) or column (namely `row == n - 1`),
 we check if the sum of the row/col is the same as the target.
 If it is, we continue scanning the grid and check if a solution is found.
-If the sum is invalid or a solution was not found, we try discarding the cell and repeat the same process.
+If the sum is invalid or a solution was not found we repeat the same process, this time discarding the cell in lieu of including it.
 
 If both keeping and discarding the cell fail, we reached a dead end and backtrack.
 
@@ -44,3 +44,31 @@ This version works for smaller grids. Is has however a major flaw: Pruning happe
 which happens scarcely. Moreover, since we scan in row-major order, columns are ignored until the last row is reached.
 The lax pruning makes solving (9 x 9) grids infeasible. In fact, medium level grids of such size can take 20 seconds
 to solve, while a masters level runs out of memory and SEGFAULTS.
+
+## Version II
+Since the first version is insufficient, we must find a way to intensify the pruning.
+
+There are few important observations: 
+* A row with $n$ elements has $2^{n}$ configurations, and $2^{n}$ is not a large number (since $n\le9$ so $2^{n}\le512$).
+* It is unlikely that most of the configurations sum to the target.
+
+Now we can try to use those ideas in practice:
+
+### Algorithm
+Before scanning, we preprocess the input:
+For each row and each columns, we try all its subsets, and add all those who sum to the target ([valid subsets](valid_subsets_generation_documentation)) to a [trie](trie_documentation).
+
+Then starts the main algorithm: We scan the grid in row-major order, looking for an unassigned cell.
+
+If no such cell exists, all cells are filled and we found a solution.
+
+Otherwise we try including the cell.
+If including this cell is not a part of any valid subset of the current row or the current column we reached a dead end.
+If it is a valid subset of some valid row's configuration and column's configuration, we continue 
+If it is, we continue scanning the grid and check if a solution is found.
+If it is not a valid subset or solution was not found we repeat the same process, this time discarding the cell in lieu of including it.
+
+If both keeping and discarding the cell fail, we reached a dead end and backtrack.
+
+### Analysis
+
