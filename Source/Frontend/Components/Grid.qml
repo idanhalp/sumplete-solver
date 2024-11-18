@@ -48,8 +48,8 @@ GridView {
 		}
 
 		TextField {
-            anchors.fill: parent
-            horizontalAlignment: TextField.AlignHCenter
+			anchors.fill: parent
+			horizontalAlignment: TextField.AlignHCenter
 
 			font.pixelSize: 25
 
