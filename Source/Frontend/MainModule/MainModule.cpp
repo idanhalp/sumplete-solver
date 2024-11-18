@@ -82,9 +82,8 @@ auto MainModule::display_solution() -> bool
 {
 	const bool input_is_valid = check_input_validity();
 
-	if (!input_is_valid)
+	if (!input_is_valid) // Should never be true, input is validated by the front.
 	{
-		// TODO: Handle invalid input.
 		return false;
 	}
 
@@ -94,7 +93,6 @@ auto MainModule::display_solution() -> bool
 
 	if (!solution_is_found)
 	{
-		// TODO: handle unsolvable grid.
 		return false;
 	}
 

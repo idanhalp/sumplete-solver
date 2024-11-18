@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Controls
 import SumpleteSolverQt
 import "Components"
-import "Components/Popups"
 
 Window {
 	id: root
@@ -88,10 +87,4 @@ Window {
 
 		anchors.centerIn: parent
 	}
-
-	// Button {
-	// 	text: "Show Popup"
-	// 	anchors.centerIn: parent
-	// 	onClicked: popup.open()
-	// }
 }
