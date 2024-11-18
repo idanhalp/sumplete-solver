@@ -23,7 +23,7 @@ An additional feature of inserting a puzzle by its ID is planned for a future ve
 
 You can read more about using the solver [here](link_solver_usage_documentation).
 
-## What technologies were used to create the solver?
+## Which technologies were used to create the solver?
 The solver is written in C++, using the Qt framework for implementing the GUI.
 
 Utilization of C++ combined with a practical and efficient algorithm enables the solver to find a solution with great speed and minimal memory usage.
