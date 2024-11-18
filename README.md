@@ -20,10 +20,12 @@ Fill the grid, rows' sums and columns' sums with numbers, and press the 'solve' 
 
 An additional feature of inserting a puzzle by its ID is planned for a future version.
 
-You can read more about using the solver [here](link_to_documentation)
+You can read more about using the solver [here](link_solver_usage_documentation).
 
 ## What technologies were used to create the solver?
 The solver is written in C++, using the Qt framework for implementing the GUI.
 
 Utilization of C++ combined with a practical and efficient algorithm enables the solver to find a solution with great speed and minimal memory usage.
 Modern C++ standard (C++23) helps keep the program safe, while not diminishing its efficiency.
+
+You can read more about the algorithms used to solve the puzzle [here](link_to_algorithm_documentation).
