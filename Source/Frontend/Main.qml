@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 import SumpleteSolverQt
 import "Components"
 
@@ -79,5 +80,11 @@ Window {
 		ClearButton {
 			id: clearButton
 		}
+	}
+
+	NoSolutionPopup {
+		id: noSolutionPopup
+
+		anchors.centerIn: parent
 	}
 }
