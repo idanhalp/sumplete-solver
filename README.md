@@ -1,17 +1,18 @@
 # sumplete-solver
 ## What is the purpose of this project?
 This project aims to provide a fast and easy-to-use solver for [Sumplete](https://sumplete.com/).
+
 You can access the solver [here](link_to_solver).
 
 ## What is Sumplete?
 Sumplete is a logic puzzle.
 ### Input
 * A square grid filled with numbers.
-* Target sums for each row and column.
+* A target sum for each row and column.
 ### Objective
-Decide which numbers to keep and which to delete so that the remaining numbers in each row and column add up to their target sums.
+Decide which numbers to keep and which to delete so that the remaining numbers in each row and column add up to their target sum.
 
-You can read more about the rules from the link above to the original site.
+You can read more about the rules from the [original site](https://sumplete.com/) or from this repo's [documentation about them](link_to_rules_documentation).
 
 ## How to use the solver?
 The solver can be accessed [here](link_to_solver).
