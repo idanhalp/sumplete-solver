@@ -13,8 +13,8 @@ Nevertheless, there is a serious challenge in converting logical reasoning
 to actual code.
 
 ## Analysis of the Problem
-Given an ($n$ x $n$) grid,  there exists $2^{n^2}$ possible configurations.
+Given an ($n$ x $n$) grid,  there exist $2^{n^2}$ possible configurations.
 If $n = 9$, this means $2^{81} \approx 2.4e24$ configurations.
 
-This immediately take a brute force solution out of the picture.
+This immediately takes a brute force solution out of the picture.
 A practical algorithm must scan through a fraction of this search space, otherwise it is going to take some time to solve...
