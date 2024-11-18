@@ -13,7 +13,7 @@ Sumplete is a logic puzzle.
 ### Objective
 Decide which numbers to keep and which to delete so that the remaining numbers in each row and column add up to their target sum.
 
-You can read more about the rules from the [original site](https://sumplete.com/) or from this repo's [documentation about them](link_to_rules_documentation).
+You can read more about the rules from the [original site](https://sumplete.com/) or from this repo's [documentation about them](Documentation/Explanations/Rules.md).
 
 ## How to use the solver?
 The solver can be accessed [here](link_to_solver).
@@ -22,7 +22,7 @@ Fill the grid, rows' sums and columns' sums with numbers, and press the 'solve' 
 
 An additional feature of inserting a puzzle by its ID is planned for a future version.
 
-You can read more about using the solver [here](link_solver_usage_documentation).
+You can read more about using the solver [here](Documentation/Explanations/HowToUse.md).
 
 ## Which technologies were used to create the solver?
 The solver is written in C++, using the Qt framework for implementing the GUI.
@@ -30,4 +30,4 @@ The solver is written in C++, using the Qt framework for implementing the GUI.
 Utilization of C++ combined with a practical and efficient algorithm enables the solver to find a solution with great speed and minimal memory usage.
 Modern C++ standard (C++23) helps keep the program safe, while not diminishing its efficiency.
 
-You can read more about the algorithms used to solve the puzzle [here](link_to_algorithm_documentation).
+You can read more about the algorithm used to solve the puzzle [here](Documentation/Explanations/Algorithm/Algorithm.md).

@@ -57,8 +57,8 @@ Now we can try to use those ideas in practice:
 ### Algorithm
 Before scanning, we preprocess the input:
 For each row and each columns, we try all its subsets, and add all those who sum to the target 
-(also termed [valid subsets](https://github.com/idanhalp/sumplete-solver/blob/documentation/Documentation/Algorithm/ValidSubsetsGeneration.md))
-to a [trie](https://github.com/idanhalp/sumplete-solver/blob/documentation/Documentation/Algorithm/Trie.md).
+(also termed [valid subsets](ValidSubsetsGeneration.md))
+to a [trie](Trie.md).
 
 Then starts the main algorithm: We scan the grid in row-major order, looking for an unassigned cell.
 
