@@ -6,7 +6,7 @@ This document outlines the future plans for this project.
 ## Goals
 ### General
 - [ ] Project deployment.
-- [ ] Comprehensive README file.
+- [X] Comprehensive README file.
 
 ### Backend
 - [X] Backend directory.
