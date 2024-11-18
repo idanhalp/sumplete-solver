@@ -18,7 +18,8 @@ ListView {
 		border.color: "black"
 
 		TextField {
-			anchors.centerIn: parent
+            anchors.fill: parent
+            horizontalAlignment: TextField.AlignHCenter
 
 			font.pixelSize: 25
 
