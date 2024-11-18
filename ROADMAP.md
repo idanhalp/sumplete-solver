@@ -24,6 +24,7 @@ This document outlines the future plans for this project.
 - [X] Interaction with the solver.
 - [X] Displaying the solution.
 - [X] 'Clear' button.
+- [X] 'No solution' popup.
 
 ### Refactoring
 - [ ] Convert directory and namespace names to snake case.
