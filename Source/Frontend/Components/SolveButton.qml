@@ -17,9 +17,9 @@ Button {
 	}
 
 	onClicked: {
-		const solutionStatus = mainModule.display_solution()
+		const solutionFound = mainModule.display_solution()
 
-		if (!solutionStatus)
+		if (!solutionFound)
 		{
 			noSolutionPopup.open()
 		}
