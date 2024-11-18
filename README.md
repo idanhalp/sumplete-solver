@@ -1,5 +1,5 @@
 # sumplete-solver
-![SolverView](Documentation/Images/SolvedFiveOnFivePuzzle.png)
+![SolverView](Documentation/Images/SolvedNineOnNinePuzzle.png)
 ## What is the purpose of this project?
 This project aims to provide a fast and easy-to-use solver for [Sumplete](https://sumplete.com/).
 
