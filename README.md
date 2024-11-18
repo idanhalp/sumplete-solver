@@ -1,7 +1,7 @@
 # sumplete-solver
 ## What is the purpose of this project?
 This project aims to provide a fast and easy-to-use solver for [Sumplete](https://sumplete.com/).
-You can access the solver [here]().
+You can access the solver [here](link_to_solver).
 
 ## What is Sumplete?
 Sumplete is a logic puzzle.
@@ -14,6 +14,13 @@ Decide which numbers to keep and which to delete so that the remaining numbers i
 You can read more about the rules from the link above to the original site.
 
 ## How to use the solver?
+The solver can be accessed [here](link_to_solver).
+
+Fill the grid, rows' sums and columns' sums with numbers, and press the 'solve' button. If the puzzle has a solution, the cells will be colored with green and red: The green cells are to be kept, and the red cells are to be discarded.
+
+An additional feature of inserting a puzzle by its ID is planned for a future version.
+
+You can read more about using the solver [here](link_to_documentation)
 
 ## What technologies were used to create the solver?
 The solver is written in C++, using the Qt framework for implementing the GUI.
