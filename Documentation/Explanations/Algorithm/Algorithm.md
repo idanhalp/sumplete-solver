@@ -73,4 +73,13 @@ If it is not a valid subset or solution was not found we repeat the same process
 If both keeping and discarding the cell fail, we reached a dead end and backtrack.
 
 ### Analysis
+This algorithm offers better pruning capabilities, at the cost of some preprocessing.
 
+If $n$ is the input's size, preprocessing it involves iterating over all $n$ rows and $n$ columns, and checking each of their $2^{n}$ subsets,
+which costs in total $2 \cdot n \cdot 2^{n}$. Since $n\le9$, the additional work is inconsequential.
+
+The pruning is much improved:
+* Dead ends can be detected in every cell (and not just edges of the board). 
+* Columns' validity is checked in every step (and the first algorithm it is only taken in account once the last row is reached). 
+
+In practice, this version proves to be suitible for utilization in the solver.
