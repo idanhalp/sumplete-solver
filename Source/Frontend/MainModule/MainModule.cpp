@@ -80,9 +80,9 @@ auto MainModule::update_row_sum(const int row, const QString& value) -> void
 
 auto MainModule::display_solution() -> Params::SolutionStatus
 {
-	const bool input_is_valid = check_input_validity();
+	const bool input_is_complete = check_input_validity();
 
-	if (!input_is_valid) // Should never be true, input is validated by the front.
+	if (!input_is_complete)
 	{
 		return Params::SolutionStatus::INCOMPLETE_INPUT;
 	}
