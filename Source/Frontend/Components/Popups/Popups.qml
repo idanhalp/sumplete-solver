@@ -1,11 +1,19 @@
-NoSolutionPopup {
-	id: noSolutionPopup
+import QtQuick
 
-	anchors.centerIn: parent
-}
+Item {
 
-IncompleteInputPopup {
-	id: incompleteInputPopup
+	property alias noSolutionPopup: noSolutionPopup
+	property alias incompleteInputPopup: incompleteInputPopup
 
-	anchors.centerIn: parent
+	NoSolutionPopup {
+		id: noSolutionPopup
+
+		anchors.centerIn: parent
+	}
+
+	IncompleteInputPopup {
+		id: incompleteInputPopup
+
+		anchors.centerIn: parent
+	}
 }

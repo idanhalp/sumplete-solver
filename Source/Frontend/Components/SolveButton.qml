@@ -23,11 +23,11 @@ Button {
 		switch (solutionStatus)
 		{
 			case Params.SolutionStatus.INCOMPLETE_INPUT:
-				incompleteInputPopup.open()
+				popups.incompleteInputPopup.open()
 				break
 
 			case Params.SolutionStatus.NO_SOLUTION:
-				noSolutionPopup.open()
+				popups.noSolutionPopup.open()
 				break
 
 			case Params.SolutionStatus.VALID_SOLUTION:

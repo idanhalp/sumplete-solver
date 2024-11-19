@@ -4,7 +4,7 @@ import QtQuick.Controls
 Popup {
 	id: root
 
-	width: 300
+	width: 350
 	height: 250
 
 	closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
