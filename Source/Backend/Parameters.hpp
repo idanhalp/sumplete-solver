@@ -40,7 +40,9 @@ namespace Params
 		input_grid_t grid;
 	};
 
-	Q_ENUM_NS(CellStatus); // Register the enum in meta object data.
+	// Register enums in meta object data.
+	Q_ENUM_NS(CellStatus);
+	Q_ENUM_NS(SolutionStatus);
 }
 
 #endif // SOURCE_PARAMETERS_HPP
