@@ -206,7 +206,7 @@ auto AlgorithmTests::test_8() -> void
 
 	const Params::Input input = {row_sums, col_sums, grid};
 	const Params::output_t output = Algorithm::Version2::solve(input);
-	const bool output_is_valid = !output.has_value() && output.error() == Params::SolutionError::NO_SOLUTION;;
+	const bool output_is_valid = !output.has_value() && output.error() == Params::SolutionStatus::NO_SOLUTION;;
 
 	QVERIFY(output_is_valid);
 }

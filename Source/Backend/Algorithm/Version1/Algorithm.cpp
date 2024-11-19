@@ -24,7 +24,7 @@ namespace Algorithm::Version1::Auxiliary
 
 auto Algorithm::Version1::solve(const Params::Input& input) -> Params::output_t
 {
-	const std::optional<Params::SolutionError> input_error = ValidityChecks::check_input(input);
+	const std::optional<Params::SolutionStatus> input_error = ValidityChecks::check_input(input);
 	const bool found_error_in_input = input_error.has_value();
 
 	if (found_error_in_input)
@@ -46,7 +46,7 @@ auto Algorithm::Version1::solve(const Params::Input& input) -> Params::output_t
 	}
 	else
 	{
-		return std::unexpected(Params::SolutionError::NO_SOLUTION);
+		return std::unexpected(Params::SolutionStatus::NO_SOLUTION);
 	}
 }
 
