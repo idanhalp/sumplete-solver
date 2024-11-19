@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import SumpleteSolverQt
 import "Components"
+import "Components/Popups"
 
 Window {
 	id: root
@@ -82,8 +83,8 @@ Window {
 		}
 	}
 
-	NoSolutionPopup {
-		id: noSolutionPopup
+	Popups {
+		id: popups
 
 		anchors.centerIn: parent
 	}

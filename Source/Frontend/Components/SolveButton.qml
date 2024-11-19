@@ -19,18 +19,11 @@ Button {
 
 	onClicked: {
 		const solutionStatus = mainModule.display_solution()
-//Params.CellStatus.UNKNOWN
-// INCOMPLETE_INPUT,
-// 		INCORRECT_NUMBER_OF_ROWS,
-// 		INCORRECT_NUMBER_OF_COLUMNS,
-// 		GRID_NOT_SQUARED,
-// 		NO_SOLUTION,
-// 		VALID_SOLUTION
-// 	};
+
 		switch (solutionStatus)
 		{
 			case Params.SolutionStatus.INCOMPLETE_INPUT:
-				console.log("INCOMPLETE")
+				incompleteInputPopup.open()
 				break
 
 			case Params.SolutionStatus.NO_SOLUTION:
@@ -38,10 +31,9 @@ Button {
 				break
 
 			case Params.SolutionStatus.VALID_SOLUTION:
-				console.log("Found solution!")
 				break
 
-			default:
+			default: // Should really not happen.
 				console.log("Something strange happened.")
 		}
 	}
