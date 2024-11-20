@@ -5,10 +5,6 @@
 #include <memory>
 #include <vector>
 
-/// A constrained implementation of the trie data structure, that deals with binary sequences.
-/// It helps checking if some set is a subset of some other set that was inserted to the trie.
-/// It is useful to efficiently check whether a subset of a row or a column is part of some set that
-/// adds up to the desired sum.
 namespace Algorithm::Version2::Utils
 {
 	class Trie

@@ -3,20 +3,7 @@
 
 #include "Source/Backend/Parameters.hpp"
 
-/// @brief Optimized algorithm for finding a solution.
-///
-/// The main difference from the first version lays 
-/// in the pruning of dead end paths.
-///
-/// A preprocessing stage is added:
-/// Every possible subset of each row and column is checked,
-/// and the subsets that sum to the target are inserted to a trie.
-/// 
-/// Using the tries, we are able to check after every substitution
-/// if we have reached a dead end, and continue or backtrack accordingly.
-///
-/// This version is much superior to the first one, and is capable
-/// of solving master-level 9x9 grids immediately.
+// Optimized version.
 namespace Algorithm::Version2
 {
 	/// @brief Finds a solution to the input.
