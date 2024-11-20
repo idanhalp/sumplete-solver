@@ -34,7 +34,8 @@ Button {
 				break
 
 			default: // Should really not happen.
-				console.log("Something strange happened.")
+				popups.errorPopup.open()
+				break
 		}
 	}
 }
