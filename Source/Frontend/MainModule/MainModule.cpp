@@ -23,6 +23,8 @@ auto MainModule::data(const QModelIndex& index, int role) const -> QVariant
 {
 	Q_UNUSED(index)
 	Q_UNUSED(role)
+
+	return {};
 }
 
 auto MainModule::clear() -> void
