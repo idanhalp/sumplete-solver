@@ -104,10 +104,10 @@ auto Algorithm::Version2::Auxiliary::check_if_substitution_is_valid(const Cell c
 	return row_is_valid && col_is_valid;
 }
 
-/// @brief Converts a list of cells to a vector of booleans that indicate whether each relevant cell is included in the sum.
-/// This function is used to interact with the tries.
-/// @note an `UNKNOWN` CellStatus indicates the end of the sequence. 
-/// It is guaranteed that once such CellStatus is found, the rest are also `UNKNOWN`.
+/// @brief   Converts a list of cells to a vector of booleans that indicate whether each relevant cell is included in the sum.
+///          This function is used to interact with the tries.
+/// @note    an `UNKNOWN` CellStatus indicates the end of the sequence.
+///          It is guaranteed that once such CellStatus is found, the rest are also `UNKNOWN`.
 /// @example `get_boolean_sequence({KEEP, DELETE, KEEP, DELETE})`  => `{true, false, true, false}`.
 /// @example `get_boolean_sequence({KEEP, DELETE, KEEP, UNKNOWN})` => `{true, false, true}`.
 auto Algorithm::Version2::Auxiliary::get_boolean_sequence(std::span<const Params::CellStatus> cells) -> std::vector<bool>
@@ -123,9 +123,8 @@ auto Algorithm::Version2::Auxiliary::get_boolean_sequence(std::span<const Params
 	return sequence;
 }
 
-/// @brief Iterates over the rows and inserts all the valid subsets that sum to a row's target into a trie.
-/// This function processes the input to make the process of pruning dead end substitutions more efficient.
-/// @returns a std::vector of tries, s.t each trie contains the subsequences that sum to its respective row's target. 
+/// @brief   Iterates over the rows and inserts all the valid subsets that sum to a row's target into a trie.
+/// @returns a std::vector of tries, s.t each trie contains the subsequences that sum to its respective row's target.
 auto Algorithm::Version2::Auxiliary::get_valid_rows_sequences(const Params::Input& input) -> std::vector<Utils::Trie>
 {
 	std::vector<Utils::Trie> valid_rows_sequences;
@@ -139,8 +138,7 @@ auto Algorithm::Version2::Auxiliary::get_valid_rows_sequences(const Params::Inpu
 	return valid_rows_sequences;
 }
 
-/// @brief Iterates over the columns and inserts all the valid subsets that sum to a column's target into a trie.
-/// This function processes the input to make the process of pruning dead end substitutions more efficient.
+/// @brief   Iterates over the columns and inserts all the valid subsets that sum to a column's target into a trie.
 /// @returns a std::vector of tries, s.t each trie contains the subsequences that sum to its respective column's target.
 auto Algorithm::Version2::Auxiliary::get_valid_cols_sequences(const Params::Input& input) -> std::vector<Utils::Trie>
 {
@@ -158,8 +156,8 @@ auto Algorithm::Version2::Auxiliary::get_valid_cols_sequences(const Params::Inpu
 	return valid_cols_sequences;
 }
 
-/// @brief Returns the specified column as a `std::vector`.
-/// @return std::vector col, s.t `col.size() == grid.size()` and `col[row_index] == grid[row_index][col_index]`.
+/// @brief   Returns the specified column as a `std::vector`.
+/// @return  std::vector col, s.t `col.size() == grid.size()` and `col[row_index] == grid[row_index][col_index]`.
 /// @example `get_col(0, {{1, 2}, {3, 4}})` => `{1, 3}`.
 /// @example `get_col(1, {{1, 2}, {3, 4}})` => `{2, 4}`.
 template <typename T>
@@ -175,6 +173,8 @@ auto Algorithm::Version2::Auxiliary::get_col(size_t col_index, const std::vector
 	return col_elements;
 }
 
+/// @brief  Finds the next vacant cell in a row-major scan.
+/// @return The cell is it exists, otherwise a `std::nullopt`.
 auto Algorithm::Version2::Auxiliary::find_next_vacant_cell(const Params::output_grid_t& output) -> std::optional<Cell>
 {
 	for (size_t row = 0; row < output.size(); ++row)
