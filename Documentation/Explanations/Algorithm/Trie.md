@@ -18,20 +18,20 @@ configuration is a prefix of a valid subset. If it is not, we backtrack and save
 Assume we have the row {1, 2, 3}, whose target sum is 3.
 
 The row has 8 subsets:
-1. `{}        => {false, false, false}`
-2. `{1}       => {true,  false, false}`
-3. `{2}       => {false, true, false }`
-4. `{1, 2}    => {true,  true, false }`
-5. `{3}       => {false, false, true }`
-6. `{1, 3}    => {true,  false, true }`
-7. `{2, 3}    => {false, true, true  }`
-8. `{1, 2, 3} => {true,  true, true  }`
+1. `{}        => {false, false, false} (sum is 0)`
+2. `{1}       => {true,  false, false} (sum is 1)`
+3. `{2}       => {false, true, false } (sum is 2)`
+4. `{1, 2}    => {true,  true, false } (sum is 3)`
+5. `{3}       => {false, false, true } (sum is 3)`
+6. `{1, 3}    => {true,  false, true } (sum is 4)`
+7. `{2, 3}    => {false, true, true  } (sum is 5)`
+8. `{1, 2, 3} => {true,  true, true  } (sum is 6)`
 
 Of those, only (4) and (5) are valid.
 
 Let us examine a situation we may encounter during our search:
 
-Assume we chose to discard the first element. Therefore the configuration is `{false}`.
+Assume we chose to discard the first element, so the configuration is `{false}`.
 We try both keeping and discarding the second option:
 1. If we keep it, our configuration becomes `{false, true}`. Since this is not a prefix of neither of the valid subsets, we know keeping the element is not an option.
 2. If we discard it, our configuration becomes `{false, false}`. Since this is a prefix of subset (5), we continue the search from this configuration.
