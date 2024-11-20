@@ -10,7 +10,7 @@ Finding the valid subsets of some row (or column) can narrow our search, by only
 that may lead us to the target.
 
 ## Implementation
-Denote the input's grid size by $n$. Since $n$ is small, we can use brute force force:
+Denote the input's grid size by $n$. Since $n$ is small, we can use brute force:
 We iterate over each subset and check if it is *valid*.
 
 Iterating over all subsets is achieved by looping through the numbers in $[0, 2^{n})$. The $j^{th}$ element
