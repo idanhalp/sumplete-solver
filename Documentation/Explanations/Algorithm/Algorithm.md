@@ -75,8 +75,11 @@ If both keeping and discarding the cell fail, we reached a dead end and backtrac
 ### Analysis
 This algorithm offers better pruning capabilities, at the cost of some preprocessing.
 
-If $n$ is the input's size, preprocessing it involves iterating over all $n$ rows and $n$ columns, and checking each of their $2^{n}$ subsets,
-which costs in total $2 \cdot n \cdot 2^{n}$. Since $n\le9$, the additional work is inconsequential.
+If $n$ is the input's size, preprocessing it involves iterating over all $n$ rows and $n$ columns, and checking each of their $2^{n}$ subsets 
+(which involves looping through all of its elements).
+
+Thus, the total cost is $2 \cdot n \cdot 2^{n} \cdot n = O(n^{2} \cdot 2^{n})$.
+Since $n\le9$, the additional work is inconsequential.
 
 The pruning is much improved:
 * Dead ends can be detected in every cell (and not just edges of the board). 
