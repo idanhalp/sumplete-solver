@@ -9,9 +9,9 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
-set(WARNING_FLAGS "-Wall -Wextra")
-set(OPTIMIZATION_LEVEL -O0)
-set(CMAKE_CXX_FLAGS "${WARNING_FLAGS} ${OPTIMIZATION_LEVEL}")
+set(WARNING_FLAGS "-Wall -Wextra -Wpedantic")
+set(CMAKE_CXX_FLAGS_DEBUG "${WARNING_FLAGS} -O0")
+set(CMAKE_CXX_FLAGS_RELEASE "${WARNING_FLAGS} -O3")
 
 # Project files.
 # Files' paths mst relative to the root.
