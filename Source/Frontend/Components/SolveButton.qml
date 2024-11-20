@@ -1,5 +1,6 @@
-import QtQuick 6.5
+import QtQuick
 import QtQuick.Controls
+import Parameters
 
 Button {
 	id: root
@@ -17,11 +18,23 @@ Button {
 	}
 
 	onClicked: {
-		const solutionFound = mainModule.display_solution()
+		const solutionStatus = mainModule.display_solution()
 
-		if (!solutionFound)
+		switch (solutionStatus)
 		{
-			noSolutionPopup.open()
+			case Params.SolutionStatus.INCOMPLETE_INPUT:
+				popups.incompleteInputPopup.open()
+				break
+
+			case Params.SolutionStatus.NO_SOLUTION:
+				popups.noSolutionPopup.open()
+				break
+
+			case Params.SolutionStatus.VALID_SOLUTION:
+				break
+
+			default: // Should really not happen.
+				console.log("Something strange happened.")
 		}
 	}
 }

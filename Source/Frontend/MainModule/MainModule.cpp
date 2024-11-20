@@ -78,13 +78,13 @@ auto MainModule::update_row_sum(const int row, const QString& value) -> void
 	reset_cell_statuses();
 }
 
-auto MainModule::display_solution() -> bool
+auto MainModule::display_solution() -> Params::SolutionStatus
 {
-	const bool input_is_valid = check_input_validity();
+	const bool input_is_complete = check_input_validity();
 
-	if (!input_is_valid) // Should never be true, input is validated by the front.
+	if (!input_is_complete)
 	{
-		return false;
+		return Params::SolutionStatus::INCOMPLETE_INPUT;
 	}
 
 	const Params::Input input = convert_input_format();
@@ -93,14 +93,14 @@ auto MainModule::display_solution() -> bool
 
 	if (!solution_is_found)
 	{
-		return false;
+		return Params::SolutionStatus::NO_SOLUTION;
 	}
 
 	// This call emits a signal that causes the cell to change colors.
 	QVariantList converted_solution = convert_solution_format(solution.value());
 	set_cell_statuses(converted_solution);
 
-	return true;
+	return Params::SolutionStatus::VALID_SOLUTION;
 }
 
 /// @brief  Checks if the input is valid.

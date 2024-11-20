@@ -9,7 +9,7 @@ namespace ValidityChecks
 	/// @brief Checks whether the input is valid.
 	/// @param input The algorithm's arguments.
 	/// @return `std::nullopt` if the input is valid, or a relevant `SolutionStatus` otherwise.
-	auto check_input(const Params::Input& input) -> std::optional<Params::SolutionError>;
+	auto check_input(const Params::Input& input) -> std::optional<Params::SolutionStatus>;
 }
 
 #endif // SOURCE_VALIDITY_CHECKS

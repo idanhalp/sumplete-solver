@@ -29,27 +29,27 @@ auto ValidityChecks::Auxiliary::check_if_number_of_cols_is_correct(const Params:
 	return input.grid.front().size() == input.col_sums.size();
 }
 
-auto ValidityChecks::check_input(const Params::Input& input) -> std::optional<Params::SolutionError>
+auto ValidityChecks::check_input(const Params::Input& input) -> std::optional<Params::SolutionStatus>
 {
 	const bool grid_is_square = Auxiliary::check_if_number_of_grid_is_square(input.grid);
 	
 	if (!grid_is_square)
 	{
-		return Params::SolutionError::GRID_NOT_SQUARED;
+		return Params::SolutionStatus::GRID_NOT_SQUARED;
 	}
 	
 	const bool number_of_rows_is_correct = Auxiliary::check_if_number_of_rows_is_correct(input);
 	
 	if (!number_of_rows_is_correct)
 	{
-		return Params::SolutionError::INCORRECT_NUMBER_OF_ROWS;
+		return Params::SolutionStatus::INCORRECT_NUMBER_OF_ROWS;
 	}
 	
 	const bool number_of_cols_is_correct = Auxiliary::check_if_number_of_cols_is_correct(input);
 
 	if (!number_of_cols_is_correct)
 	{
-		return Params::SolutionError::INCORRECT_NUMBER_OF_COLUMNS;
+		return Params::SolutionStatus::INCORRECT_NUMBER_OF_COLUMNS;
 	}
 
 	return std::nullopt; // The input is valid.

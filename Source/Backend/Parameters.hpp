@@ -19,17 +19,19 @@ namespace Params
 		UNKNOWN
 	};
 
-	enum class SolutionError
+	enum class SolutionStatus
 	{
+		INCOMPLETE_INPUT,
 		INCORRECT_NUMBER_OF_ROWS,
 		INCORRECT_NUMBER_OF_COLUMNS,
 		GRID_NOT_SQUARED,
-		NO_SOLUTION
+		NO_SOLUTION,
+		VALID_SOLUTION
 	};
 
 	typedef std::vector<std::vector<int>> input_grid_t;
 	typedef std::vector<std::vector<CellStatus>> output_grid_t;
-	typedef std::expected<output_grid_t, SolutionError> output_t;
+	typedef std::expected<output_grid_t, SolutionStatus> output_t;
 
 	struct Input
 	{
@@ -38,7 +40,9 @@ namespace Params
 		input_grid_t grid;
 	};
 
-	Q_ENUM_NS(CellStatus); // Register the enum in meta object data.
+	// Register enums in meta object data.
+	Q_ENUM_NS(CellStatus);
+	Q_ENUM_NS(SolutionStatus);
 }
 
 #endif // SOURCE_PARAMETERS_HPP
