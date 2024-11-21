@@ -3,7 +3,7 @@
 ## What is the purpose of this project?
 This project aims to provide a fast and easy-to-use solver for [Sumplete](https://sumplete.com/).
 
-You can access the solver [here](link_to_solver).
+You can access the solver [here](https://idanhalp.github.io/sumplete-solver/Live/).
 
 ## What is Sumplete?
 Sumplete is a logic puzzle.
@@ -16,7 +16,7 @@ Decide which numbers to keep and which to delete so that the remaining numbers i
 You can read more about the rules from the [original site](https://sumplete.com/) or from this repo's [documentation about them](Documentation/Explanations/Rules.md).
 
 ## How to use the solver?
-The solver can be accessed [here](link_to_solver).
+The solver can be accessed [here](https://idanhalp.github.io/sumplete-solver/Live/).
 
 Fill the grid, rows' sums and columns' sums with numbers, and press the 'solve' button. If the puzzle has a solution, the cells will be colored with green and red: The green cells are to be kept, and the red cells are to be discarded.
 
