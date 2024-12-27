@@ -42,6 +42,8 @@ set(QML_FILES
 
     Source/Frontend/Components/ClearButton.qml
     Source/Frontend/Components/ColsSums.qml
+    Source/Frontend/Components/DailyPuzzleButtons/DailyPuzzleButton.qml
+    Source/Frontend/Components/DailyPuzzleButtons/DailyPuzzleButtons.qml
     Source/Frontend/Components/Description.qml
     Source/Frontend/Components/Grid.qml
     Source/Frontend/Components/GridSizeDropdown.qml

@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import SumpleteSolverQt
 import "Components"
+import "Components/DailyPuzzleButtons"
 import "Components/Popups"
 
 Window {
@@ -28,8 +29,18 @@ Window {
 
 		anchors {
 			horizontalCenter: grid.horizontalCenter
+			bottom: dailyPuzzleButtons.top
+			bottomMargin: 20
+		}
+	}
+
+	DailyPuzzleButtons {
+		id: dailyPuzzleButtons
+
+		anchors {
+			horizontalCenter: grid.horizontalCenter
 			bottom: grid.top
-			bottomMargin: 40
+			bottomMargin: 10
 		}
 	}
 
