@@ -2,8 +2,7 @@ function getDailyPuzzle(puzzleSize) {
 	const validSizes = [5, 7];
 	const sizeIsValid = validSizes.includes(puzzleSize);
 
-	if (!sizeIsValid)
-	{
+	if (!sizeIsValid) {
 		console.log("Requested daily puzzle size is not valid!");
 		return;
 	}
