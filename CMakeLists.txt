@@ -98,6 +98,7 @@ qt_add_qml_module(SumpleteSolverApp
     SOURCES
 	Source/Frontend/MainModule/MainModule.cpp
 	Source/Frontend/MainModule/MainModule.hpp
+	QML_FILES Source/Frontend/Components/DailyPuzzleButtons/GetPuzzle.js
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
