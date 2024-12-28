@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Layouts
-import "GetPuzzle.js" as GetPuzzle
 
 Row {
 	id: root
@@ -10,17 +9,11 @@ Row {
 
 	DailyPuzzleButton {
 		id: fiveOnFiveDailyPuzzleButton
-
-		text: "Daily 5x5"
-
-		onClicked: GetPuzzle.getDailyPuzzle(5)
+		value: 5
 	}
 
 	DailyPuzzleButton {
 		id: sevenOnSevenDailyPuzzleButton
-
-		text: "Daily 7x7"
-
-		onClicked: GetPuzzle.getDailyPuzzle(7)
+		value: 7
 	}
 }
