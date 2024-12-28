@@ -57,8 +57,21 @@ GridView {
 				color: "transparent"
 			}
 
+			text: {
+				if (mainModule.grid_buffer[index] === 1000) {
+					return "";
+				}
+				else {
+					return mainModule.grid_buffer[index];
+				}
+			}
+
 			onTextChanged: {
-				mainModule.update_grid(index, text)
+				if (text === "") {
+					mainModule.update_grid(index, 1000)
+				} else {
+					mainModule.update_grid(index, text)
+				}
 			}
 
 			validator: IntValidator {

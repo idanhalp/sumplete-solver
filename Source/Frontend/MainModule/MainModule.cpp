@@ -2,7 +2,6 @@
 #include "Source/Frontend/MainModule/MainModule.hpp"
 #include <QVariant>
 #include <algorithm>
-#include <ranges>
 #include <span>
 #include <vector>
 
@@ -53,30 +52,49 @@ auto MainModule::resize(const int new_size) -> void
 	m_rows_sums.clear();
 	m_cols_sums.clear();
 
-	m_grid_buffer.fill("", new_size * new_size);
-	m_rows_sums.fill("", new_size);
-	m_cols_sums.fill("", new_size);
+	m_grid_buffer.fill(NO_VALUE, new_size * new_size);
+	m_rows_sums.fill(NO_VALUE, new_size);
+	m_cols_sums.fill(NO_VALUE, new_size);
 
 	reset_cell_statuses();
 
 	endResetModel();
 }
 
-auto MainModule::update_grid(const int index, const QString& value) -> void
+auto MainModule::load_grid(const QList<int>& grid_buffer, const QList<int>& rows_sums, const QList<int>& cols_sums) -> void
+{
+	clear();
+
+	const size_t new_size = rows_sums.size();
+	resize(new_size);
+
+	set_grid_buffer(grid_buffer);
+	set_rows_sums(rows_sums);
+	set_cols_sums(cols_sums);
+	reset_cell_statuses();
+}
+
+auto MainModule::update_grid(const int index, const int value) -> void
 {
 	m_grid_buffer[index] = value;
+	emit grid_buffer_changed();
+
 	reset_cell_statuses();
 }
 
-auto MainModule::update_col_sum(const int col, const QString& value) -> void
+auto MainModule::update_col_sum(const int col, const int value) -> void
 {
 	m_cols_sums[col] = value;
+	emit cols_sums_changed();
+
 	reset_cell_statuses();
 }
 
-auto MainModule::update_row_sum(const int row, const QString& value) -> void
+auto MainModule::update_row_sum(const int row, const int value) -> void
 {
 	m_rows_sums[row] = value;
+	emit rows_sums_changed();
+
 	reset_cell_statuses();
 }
 
@@ -110,19 +128,11 @@ auto MainModule::display_solution() -> Params::SolutionStatus
 ///         rows' and columns' sums contain valid numbers.
 auto MainModule::check_input_validity() const -> bool
 {
-	const auto value_is_valid_number = [] (const QString& value) -> bool
-	{
-		bool is_valid_number;
-		value.toInt(&is_valid_number);
+	const bool grid_is_valid = std::ranges::count(m_grid_buffer, NO_VALUE) == 0;
+	const bool rows_sums_are_valid = std::ranges::count(m_rows_sums, NO_VALUE) == 0;
+	const bool cols_sums_are_valid = std::ranges::count(m_cols_sums, NO_VALUE) == 0;
 
-		return is_valid_number;
-	};
-
-	const bool grid_is_valid = std::ranges::all_of(m_grid_buffer, value_is_valid_number);
-	const bool cols_sums_are_valid = std::ranges::all_of(m_cols_sums, value_is_valid_number);
-	const bool rows_sums_are_valid = std::ranges::all_of(m_rows_sums, value_is_valid_number);
-
-	return grid_is_valid && cols_sums_are_valid && rows_sums_are_valid;
+	return grid_is_valid && rows_sums_are_valid && cols_sums_are_valid;
 }
 
 /// @brief  Converts the input to a format `Algorithm::version2::solve` can handle.
@@ -132,11 +142,8 @@ auto MainModule::check_input_validity() const -> bool
 ///         the input must be converted before solving.
 auto MainModule::convert_input_format() const -> Params::Input
 {
-	const auto string_to_int = [] (const QString& str) -> int { return str.toInt(); };
-	const auto convert_list = [=] (const QList<QString>& list) { return list | std::views::transform(string_to_int) | std::ranges::to<std::vector>(); };
-
-	const std::vector rows_sums = convert_list(m_rows_sums);
-	const std::vector cols_sums = convert_list(m_cols_sums);
+	const std::vector rows_sums(m_rows_sums.begin(), m_rows_sums.end());
+	const std::vector cols_sums(m_cols_sums.begin(), m_cols_sums.end());
 
 	Params::input_grid_t grid(m_size, std::vector<int>(m_size));
 
@@ -144,7 +151,7 @@ auto MainModule::convert_input_format() const -> Params::Input
 	{
 		for (int col = 0; col < m_size; ++col)
 		{
-			grid[row][col] = m_grid_buffer[row * m_size + col].toInt();
+			grid[row][col] = m_grid_buffer[row * m_size + col];
 		}
 	}
 
@@ -185,6 +192,54 @@ auto MainModule::set_size(int new_size) -> void
 
 	m_size = new_size;
 	emit size_changed();
+}
+
+auto MainModule::get_grid_buffer() const -> QList<int>
+{
+	return m_grid_buffer;
+}
+
+auto MainModule::set_grid_buffer(const QList<int> new_grid_buffer) -> void
+{
+	if (m_grid_buffer == new_grid_buffer)
+	{
+		return;
+	}
+
+	m_grid_buffer = new_grid_buffer;
+	emit grid_buffer_changed();
+}
+
+auto MainModule::get_rows_sums() const -> QList<int>
+{
+	return m_rows_sums;
+}
+
+auto MainModule::set_rows_sums(const QList<int> new_rows_sums) -> void
+{
+	if (m_rows_sums == new_rows_sums)
+	{
+		return;
+	}
+
+	m_rows_sums = new_rows_sums;
+	emit rows_sums_changed();
+}
+
+auto MainModule::get_cols_sums() const -> QList<int>
+{
+	return m_cols_sums;
+}
+
+auto MainModule::set_cols_sums(const QList<int> new_cols_sums) -> void
+{
+	if (m_cols_sums == new_cols_sums)
+	{
+		return;
+	}
+
+	m_cols_sums = new_cols_sums;
+	emit cols_sums_changed();
 }
 
 auto MainModule::get_cell_statuses() const -> QVariantList

@@ -12,8 +12,11 @@ class MainModule : public QAbstractListModel
 	Q_OBJECT
 	QML_ELEMENT
 
-	Q_PROPERTY(int size READ get_size  WRITE set_size  NOTIFY size_changed FINAL)
-	Q_PROPERTY(QVariantList cell_statuses READ get_cell_statuses  WRITE set_cell_statuses  NOTIFY cell_statuses_changed FINAL)
+	Q_PROPERTY(int          size          READ get_size          WRITE set_size          NOTIFY size_changed FINAL)
+	Q_PROPERTY(QList<int>   grid_buffer   READ get_grid_buffer   WRITE set_grid_buffer   NOTIFY grid_buffer_changed FINAL)
+	Q_PROPERTY(QList<int>   rows_sums     READ get_rows_sums     WRITE set_rows_sums     NOTIFY rows_sums_changed FINAL)
+	Q_PROPERTY(QList<int>   cols_sums     READ get_cols_sums     WRITE set_cols_sums     NOTIFY cols_sums_changed FINAL)
+	Q_PROPERTY(QVariantList cell_statuses READ get_cell_statuses WRITE set_cell_statuses NOTIFY cell_statuses_changed FINAL)
 
 public:
 	MainModule();
@@ -25,28 +28,41 @@ public:
 	auto get_size() const -> int;
 	auto set_size(int new_size) -> void;
 
+	auto get_grid_buffer() const -> QList<int>;
+	auto set_grid_buffer(const QList<int> new_grid_buffer) -> void;
+
+	auto get_rows_sums() const -> QList<int>;
+	auto set_rows_sums(const QList<int> new_rows_sums) -> void;
+
+	auto get_cols_sums() const -> QList<int>;
+	auto set_cols_sums(const QList<int> new_cols_sums) -> void;
+
 	auto get_cell_statuses() const -> QVariantList;
 	auto set_cell_statuses(const QVariantList& new_cell_statuses) -> void;
 
 public slots:
 	auto clear() -> void;
 	auto resize(int new_size) -> void;
-	auto update_grid(int index, const QString& value) -> void;
-	auto update_col_sum(int col, const QString& value) -> void;
-	auto update_row_sum(int row, const QString& value) -> void;
+	auto load_grid(const QList<int>& grid, const QList<int>& rows_sums, const QList<int>& cols_sums) -> void;
+	auto update_grid(int index, int value) -> void;
+	auto update_col_sum(int col, int value) -> void;
+	auto update_row_sum(int row, int value) -> void;
 	auto display_solution() -> Params::SolutionStatus;
 
 signals:
 	auto size_changed() -> void;
+	auto grid_buffer_changed() -> void;
+	auto rows_sums_changed() -> void;
+	auto cols_sums_changed() -> void;
 	auto cell_statuses_changed() -> void;
 
 private:
-	QList<QString> m_grid_buffer; // Flattened grid.
-	QList<QString> m_rows_sums;
-	QList<QString> m_cols_sums;
+	static constexpr int NO_VALUE = 1'000;
 
-	// QAbstractItemModel interface
-	int m_size;
+	int          m_size;
+	QList<int>   m_grid_buffer; // Flattened grid.
+	QList<int>   m_rows_sums;
+	QList<int>   m_cols_sums;
 	QVariantList m_cell_statuses;
 
 	auto check_input_validity() const -> bool;

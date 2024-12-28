@@ -1,5 +1,3 @@
-// pragma ComponentBehavior: Bound
-
 import QtQuick
 import QtQuick.Controls
 
@@ -27,8 +25,22 @@ ListView {
 				color: "transparent"
 			}
 
+			text: {
+				if (mainModule.rows_sums[index] === 1000) {
+					return "";
+				}
+				else {
+					return mainModule.rows_sums[index];
+				}
+			}
+
 			onTextChanged: {
-				mainModule.update_row_sum(index, text)
+				if (text === "") {
+					mainModule.update_row_sum(index, 1000)
+				}
+				else {
+					mainModule.update_row_sum(index, text)
+				}
 			}
 
 			validator: IntValidator {

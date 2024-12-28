@@ -27,8 +27,22 @@ ListView {
 				color: "transparent"
 			}
 
+			text: {
+				if (mainModule.cols_sums[index] === 1000) {
+					return "";
+				}
+				else {
+					return mainModule.cols_sums[index];
+				}
+			}
+
 			onTextChanged: {
-				mainModule.update_col_sum(index, text)
+				if (text === "") {
+					mainModule.update_col_sum(index, 1000)
+				}
+				else {
+					mainModule.update_col_sum(index, text)
+				}
 			}
 
 			validator: IntValidator {

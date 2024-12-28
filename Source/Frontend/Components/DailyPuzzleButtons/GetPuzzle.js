@@ -11,7 +11,7 @@ function getDailyPuzzle(puzzleSize) {
 	const today = Math.floor((new Date() - new Date("Mar 8 2023")) / (1000 * 60 * 60 * 24));
 	const puzzleIndex = today - (((today - 1) % 100) + 1) + 1;
 
-	let xhr = new XMLHttpRequest();
+	const xhr = new XMLHttpRequest();
 	xhr.open("GET", "https://data.sumplete.com/daily/" + puzzleSize + "/" + puzzleIndex + ".txt", true);
 
 	xhr.onreadystatechange = function() {
@@ -31,9 +31,14 @@ function getDailyPuzzle(puzzleSize) {
 				continue;
 			}
 
-			const [grid, rowSums, colSums, _] = puzzleLine
+			const [gridBuffer, rowSums, colSums, _] = puzzleLine
 				.split(';')
 				.map(line => line.split(','));
+
+			console.log("Calling mainModule.load_grid");
+
+			mainModule.load_grid(gridBuffer, rowSums, colSums);
+			return;
 		}
 	};
 
