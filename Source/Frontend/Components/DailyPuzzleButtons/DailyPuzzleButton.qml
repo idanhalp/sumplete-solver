@@ -15,8 +15,11 @@ Button {
 
 		anchors.centerIn: parent
 
-		text: "Daily " + value + "x" + value
+		text: `Daily ${value}x${value}`
 	}
 
-	onClicked: GetPuzzle.getDailyPuzzle(value)
+	onClicked: {
+		GetPuzzle.getDailyPuzzle(value);
+		gridSizeDropdown.currentIndex = gridSizeDropdown.indexOfValue(value);
+	}
 }
