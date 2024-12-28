@@ -26,10 +26,14 @@ ListView {
 			}
 
 			text: {
-				if (mainModule.rows_sums[index] === mainModule.NO_VALUE) {
+				switch (mainModule.rows_sums[index]) {
+				case mainModule.NO_VALUE:
 					return "";
-				}
-				else {
+
+				case undefined:
+					return;
+
+				default:
 					return mainModule.rows_sums[index];
 				}
 			}

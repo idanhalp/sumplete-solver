@@ -58,11 +58,15 @@ GridView {
 			}
 
 			text: {
-				if (mainModule.grid_buffer[index] === mainModule.NO_VALUE) {
+				switch (mainModule.grid_buffer[index]) {
+				case mainModule.NO_VALUE:
 					return "";
-				}
-				else {
-					return mainModule.grid_buffer[index];
+
+				case undefined:
+					return;
+
+				default:
+					return mainModule.grid_buffer[index]
 				}
 			}
 
