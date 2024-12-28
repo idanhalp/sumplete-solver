@@ -19,7 +19,7 @@ Button {
 	}
 
 	onClicked: {
-		GetPuzzle.getDailyPuzzle(value);
+		GetPuzzle.loadDailyPuzzle(value);
 		gridSizeDropdown.currentIndex = gridSizeDropdown.indexOfValue(value);
 	}
 }

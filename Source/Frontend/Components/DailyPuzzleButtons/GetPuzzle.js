@@ -1,9 +1,16 @@
-function getDailyPuzzle(puzzleSize) {
+// Tries to retrieve the daily puzzle of the requested size.
+// If successful, uploads it to the grid.
+function loadDailyPuzzle(puzzleSize) {
+	popups.loadingPopup.open();
+	popups.loadingPopup.isLoading = true;
+
 	const validSizes = [5, 7];
 	const sizeIsValid = validSizes.includes(puzzleSize);
 
 	if (!sizeIsValid) {
 		console.log("Requested daily puzzle size is not valid!");
+		popups.loadingPopup.close();
+		popups.loadingPopup.isLoading = false;
 		return;
 	}
 
@@ -36,6 +43,8 @@ function getDailyPuzzle(puzzleSize) {
 				.map(line => line.split(','));
 
 			mainModule.load_grid(gridBuffer, rowSums, colSums);
+			popups.loadingPopup.close();
+			popups.loadingPopup.isLoading = false;
 			return;
 		}
 	};

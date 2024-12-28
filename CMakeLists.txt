@@ -49,6 +49,7 @@ set(QML_FILES
     Source/Frontend/Components/GridSizeDropdown.qml
     Source/Frontend/Components/Popups/ErrorPopup.qml
     Source/Frontend/Components/Popups/IncompleteInputPopup.qml
+    Source/Frontend/Components/Popups/LoadingPopup.qml
     Source/Frontend/Components/Popups/NoSolutionPopup.qml
     Source/Frontend/Components/Popups/Popups.qml
     Source/Frontend/Components/RowsSums.qml

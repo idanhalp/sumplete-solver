@@ -4,6 +4,7 @@ Item {
 
 	property alias errorPopup: errorPopup
 	property alias incompleteInputPopup: incompleteInputPopup
+	property alias loadingPopup: loadingPopup
 	property alias noSolutionPopup: noSolutionPopup
 
 	ErrorPopup {
@@ -14,6 +15,12 @@ Item {
 
 	IncompleteInputPopup {
 		id: incompleteInputPopup
+
+		anchors.centerIn: parent
+	}
+
+	LoadingPopup {
+		id: loadingPopup
 
 		anchors.centerIn: parent
 	}
