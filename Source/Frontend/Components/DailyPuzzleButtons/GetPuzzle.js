@@ -12,7 +12,7 @@ function getDailyPuzzle(puzzleSize) {
 	const puzzleIndex = today - (((today - 1) % 100) + 1) + 1;
 
 	const xhr = new XMLHttpRequest();
-	xhr.open("GET", "https://data.sumplete.com/daily/" + puzzleSize + "/" + puzzleIndex + ".txt", true);
+	xhr.open("GET", `https://data.sumplete.com/daily/${puzzleSize}/${puzzleIndex}.txt`, true);
 
 	xhr.onreadystatechange = function() {
 		const requestIsSuccessful = xhr.readyState === 4 && xhr.status === 200;
@@ -34,8 +34,6 @@ function getDailyPuzzle(puzzleSize) {
 			const [gridBuffer, rowSums, colSums, _] = puzzleLine
 				.split(';')
 				.map(line => line.split(','));
-
-			console.log("Calling mainModule.load_grid");
 
 			mainModule.load_grid(gridBuffer, rowSums, colSums);
 			return;
