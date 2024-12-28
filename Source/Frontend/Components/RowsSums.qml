@@ -26,7 +26,7 @@ ListView {
 			}
 
 			text: {
-				if (mainModule.rows_sums[index] === 1000) {
+				if (mainModule.rows_sums[index] === mainModule.NO_VALUE) {
 					return "";
 				}
 				else {
@@ -36,7 +36,7 @@ ListView {
 
 			onTextChanged: {
 				if (text === "") {
-					mainModule.update_row_sum(index, 1000)
+					mainModule.update_row_sum(index, mainModule.NO_VALUE)
 				}
 				else {
 					mainModule.update_row_sum(index, text)

@@ -58,7 +58,7 @@ GridView {
 			}
 
 			text: {
-				if (mainModule.grid_buffer[index] === 1000) {
+				if (mainModule.grid_buffer[index] === mainModule.NO_VALUE) {
 					return "";
 				}
 				else {
@@ -68,7 +68,7 @@ GridView {
 
 			onTextChanged: {
 				if (text === "") {
-					mainModule.update_grid(index, 1000)
+					mainModule.update_grid(index, mainModule.NO_VALUE)
 				} else {
 					mainModule.update_grid(index, text)
 				}

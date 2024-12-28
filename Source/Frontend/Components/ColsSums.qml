@@ -1,5 +1,3 @@
-// pragma ComponentBehavior: Bound
-
 import QtQuick 6.5
 import QtQuick.Controls
 
@@ -28,7 +26,7 @@ ListView {
 			}
 
 			text: {
-				if (mainModule.cols_sums[index] === 1000) {
+				if (mainModule.cols_sums[index] === mainModule.NO_VALUE) {
 					return "";
 				}
 				else {
@@ -38,7 +36,7 @@ ListView {
 
 			onTextChanged: {
 				if (text === "") {
-					mainModule.update_col_sum(index, 1000)
+					mainModule.update_col_sum(index, mainModule.NO_VALUE)
 				}
 				else {
 					mainModule.update_col_sum(index, text)

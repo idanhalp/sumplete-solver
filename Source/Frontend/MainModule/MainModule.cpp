@@ -5,7 +5,7 @@
 #include <span>
 #include <vector>
 
-MainModule::MainModule()
+MainModule::MainModule() : NO_VALUE(1'000)
 {
 	m_size = 0; // Guarantees that `m_size != new_size` when `resize` is called.
 	resize(Params::DEFAULT_GRID_SIZE);
@@ -178,6 +178,11 @@ auto MainModule::convert_solution_format(const Params::output_grid_t& solution) 
 auto MainModule::reset_cell_statuses() -> void
 {
 	set_cell_statuses(QVariantList(m_grid_buffer.size(), QVariant::fromValue(Params::CellStatus::UNKNOWN)));
+}
+
+auto MainModule::get_NO_VALUE() const -> int
+{
+	return NO_VALUE;
 }
 
 auto MainModule::get_size() const -> int
