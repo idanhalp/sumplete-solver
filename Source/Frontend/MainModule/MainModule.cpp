@@ -48,13 +48,9 @@ auto MainModule::resize(const int new_size) -> void
 
 	beginResetModel();
 
-	m_grid_buffer.clear();
-	m_rows_sums.clear();
-	m_cols_sums.clear();
-
-	m_grid_buffer.fill(NO_VALUE, new_size * new_size);
-	m_rows_sums.fill(NO_VALUE, new_size);
-	m_cols_sums.fill(NO_VALUE, new_size);
+	set_grid_buffer(QList<int>(new_size * new_size, NO_VALUE));
+	set_rows_sums(QList<int>(new_size, NO_VALUE));
+	set_cols_sums(QList<int>(new_size, NO_VALUE));
 
 	reset_cell_statuses();
 
